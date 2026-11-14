@@ -65,6 +65,33 @@
    "seguridad_pct": 43
   }
  },
+ "rango_8_de_10_anios": {
+  "dias_calor_mayor_35": {
+   "bajo": 27,
+   "tipico": 54,
+   "alto": 96
+  },
+  "lluvia_mayo_octubre_mm": {
+   "bajo": 675,
+   "tipico": 840,
+   "alto": 1207
+  },
+  "deficit_agua_mm": {
+   "bajo": -399,
+   "tipico": -44,
+   "alto": 191
+  },
+  "canicula_baja_lluvia_pct": {
+   "bajo": -21,
+   "tipico": 16,
+   "alto": 57
+  },
+  "inicio_lluvias_dia_del_anio": {
+   "bajo": 128,
+   "tipico": 145,
+   "alto": 161
+  }
+ },
  "anios": [
   {
    "anio": 1985,

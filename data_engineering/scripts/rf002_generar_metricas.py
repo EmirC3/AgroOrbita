@@ -115,6 +115,16 @@ def promedio(anios, clave):
     return round(statistics.mean(v)) if v else None
 
 
+def rango_8_de_10(valores):
+    """Ordena los años y quita el 10 % más bajo y el 10 % más alto.
+    bajo/alto = entre qué valores cae 8 de cada 10 años; tipico = el año de en medio."""
+    v = [x for x in valores if x is not None]
+    if len(v) < 10:
+        return {"bajo": None, "tipico": None, "alto": None}
+    cortes = statistics.quantiles(v, n=10)   # 9 cortes; el primero deja abajo el 10 %
+    return {"bajo": round(cortes[0]), "tipico": round(statistics.median(v)), "alto": round(cortes[-1])}
+
+
 def generar(m):
     print(f"{m['nombre']}:")
     base = leer_clima_base(m)
@@ -140,12 +150,15 @@ def generar(m):
     }
     # Tendencia 1985-2025 (solo años completos): cuánto cambia por década y si es real
     xs = [a["anio"] for a in normales]
-    tend = {c: tendencia(xs, [a[c] for a in normales])
-            for c in ("dias_calor_mayor_35", "lluvia_mayo_octubre_mm", "deficit_agua_mm",
-                      "canicula_baja_lluvia_pct")}
-    tend["inicio_lluvias_dia_del_anio"] = tendencia(xs, [
-        date.fromisoformat(a["inicio_lluvias"]).timetuple().tm_yday if a["inicio_lluvias"] else None
-        for a in normales])
+    claves = ("dias_calor_mayor_35", "lluvia_mayo_octubre_mm", "deficit_agua_mm",
+              "canicula_baja_lluvia_pct")
+    doy_por_anio = [date.fromisoformat(a["inicio_lluvias"]).timetuple().tm_yday
+                    if a["inicio_lluvias"] else None for a in normales]
+    tend = {c: tendencia(xs, [a[c] for a in normales]) for c in claves}
+    tend["inicio_lluvias_dia_del_anio"] = tendencia(xs, doy_por_anio)
+    # Incertidumbre: entre qué valores cae 8 de cada 10 años
+    rango = {c: rango_8_de_10([a[c] for a in normales]) for c in claves}
+    rango["inicio_lluvias_dia_del_anio"] = rango_8_de_10(doy_por_anio)
     for a in anios:
         a["diferencia_vs_promedio"] = {
             c: (a[c] - prom[c]) if a[c] is not None and prom[c] is not None else None
@@ -162,6 +175,7 @@ def generar(m):
         "punto_cuadricula_nasa": {"lat": punto[0], "lon": punto[1]},
         "promedio_1985_2025": prom,
         "tendencia_por_decada": tend,
+        "rango_8_de_10_anios": rango,
         "anios": anios,
     }
     ruta = DATOS / "metrics" / f"{m['municipio']}.json"

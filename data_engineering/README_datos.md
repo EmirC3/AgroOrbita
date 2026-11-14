@@ -30,5 +30,7 @@ Funciones reutilizables en `scripts/` (`rd001_inicio_lluvias.py`, `rd002_canicul
   mejor pasa entre los años completos 1985-2025) y qué tan seguros estamos de que es real
   (`seguridad_pct`, prueba de Mann-Kendall; 95 % o más se considera seguro).
   Funciones en `scripts/tendencia.py`.
+- **Incertidumbre (`rango_8_de_10_anios`):** de los años completos 1985-2025 se quita el 10 % más bajo
+  y el 10 % más alto. `bajo`-`alto` = entre qué valores cae 8 de cada 10 años; `tipico` = la mediana.
 - **`EVPTRNS` no se usa:** es la evapotranspiración real del modelo de NASA, en unidades de energía.
   AquaCrop necesita la evapotranspiración de referencia (ETo), que calculamos con FAO-56 (RF-003).
