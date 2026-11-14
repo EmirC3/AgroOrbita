@@ -8,10 +8,10 @@ Qué hace, paso a paso:
 3. Junta todo en una tabla: una fila por día y por punto de la cuadrícula.
 4. Calcula el viento a 2 m con la fórmula de la FAO a partir del viento a 10 m
    (decisión del equipo: no se usa WS2M de NASA porque sale demasiado bajo, ~0.2 m/s).
-5. Guarda la tabla comprimida en datos/clima/power_yucatan_extra.csv.gz
+5. Guarda la tabla comprimida en data_engineering/raw_data/power_yucatan_extra.csv.gz
 
 Cómo correrlo (desde la carpeta AgroOrbita):
-    python datos/src/descarga_power_extra.py
+    python data_engineering/scripts/descarga_power_extra.py
 
 Solo usa librerías que ya vienen con Python, no hay que instalar nada.
 """
@@ -49,7 +49,7 @@ URL_REGION = (BASE + "/regional?parameters=T2M&community=AG"
 URL_PUNTO = (BASE + "/point?parameters=" + ",".join(VARIABLES) + "&community=AG"
              "&latitude={lat}&longitude={lon}&start=" + INICIO + "&end=" + FIN + "&format=JSON")
 
-SALIDA = Path(__file__).resolve().parents[1] / "clima" / "power_yucatan_extra.csv.gz"
+SALIDA = Path(__file__).resolve().parents[1] / "raw_data" / "power_yucatan_extra.csv.gz"
 
 
 def pedir(url):

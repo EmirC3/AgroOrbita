@@ -12,13 +12,13 @@ Dueños: Rol 1 (datos), Rol 2 (simulación), Rol 4 (web). Todo cambio entra por 
 - Todo archivo lleva `formato_version`, `fuente` y `es_ejemplo` (RN-002, RNF-003).
 - Los datos de ejemplo usan el municipio `ejemplo` y `"es_ejemplo": true`.
 
-## 1. `datos/municipios.json`  (RF-008)
+## 1. `data_engineering/datasets/municipios.json`  (RF-008)
 ```json
 { "formato_version": "0.1",
   "municipios": [ { "municipio": "merida", "nombre": "Mérida", "lat": 20.97, "lon": -89.62 } ] }
 ```
 
-## 2. `datos/metricas/<municipio>.json`  (RF-002, RF-009)
+## 2. `data_engineering/metrics/<municipio>.json`  (RF-002, RF-009)
 Las 7 métricas de RF-002, por año y promedio 1985-2025.
 ```json
 { "formato_version": "0.1", "municipio": "merida", "fuente": "NASA POWER", "es_ejemplo": false,
@@ -36,7 +36,7 @@ Las 7 métricas de RF-002, por año y promedio 1985-2025.
 - `inicio_lluvias`: `null` si el año no tiene inicio claro (RD-001).
 - `completo: false` si faltan más de 10 % de los días; ese año no entra al promedio (RF-002).
 
-## 3. `datos/suelo.json`  (RF-004)
+## 3. `data_engineering/datasets/suelo.json`  (RF-004)
 ```json
 { "formato_version": "0.1", "fuente": "SoilGrids", "es_ejemplo": false,
   "suelos": [ { "municipio": "merida", "arcilla_pct": 28, "arena_pct": 35, "limo_pct": 37,
@@ -44,7 +44,7 @@ Las 7 métricas de RF-002, por año y promedio 1985-2025.
 ```
 Si se usó INEGI como respaldo, `fuente` lo dice.
 
-## 4. `simulacion/resultados/<municipio>_<cultivo>.json`  (RF-005, RF-006, RF-014)
+## 4. `data_engineering/simulacion/resultados/<municipio>_<cultivo>.json`  (RF-005, RF-006, RF-014)
 ```json
 { "formato_version": "0.1", "municipio": "merida", "cultivo": "maiz",
   "fuente": "AquaCrop-OSPy con NASA POWER y SoilGrids", "es_ejemplo": false,
@@ -63,7 +63,7 @@ Si se usó INEGI como respaldo, `fuente` lo dice.
 - Buena cosecha = rendimiento mayor o igual a 70 % del máximo simulado (RF-006).
 - `alerta_alto_riesgo: true` si ninguna semana supera 50 %.
 
-## 5. `simulacion/resultados/rotaciones_<municipio>.json`  (RF-007)
+## 5. `data_engineering/simulacion/resultados/rotaciones_<municipio>.json`  (RF-007)
 ```json
 { "formato_version": "0.1", "municipio": "merida", "fuente": "AquaCrop-OSPy y tabla de cultivos", "es_ejemplo": false,
   "rotaciones": [
@@ -76,7 +76,7 @@ Si se usó INEGI como respaldo, `fuente` lo dice.
 Mínimo 3 rotaciones. Un cultivo sin información se lista en `vacios_informacion`, no como dato (RF-007).
 Pregunta abierta: cómo se identifica "la rotación actual" del agricultor (por coincidencia de secuencia en la web).
 
-## 6. `simulacion/resultados/contexto_asistente/<municipio>_<cultivo>.json`  (RF-016, RF-017)
+## 6. `data_engineering/simulacion/resultados/contexto_asistente/<municipio>_<cultivo>.json`  (RF-016, RF-017)
 Resumen que usa el asistente de IA. **Es la única fuente de cifras que el asistente puede citar** (RNF-006).
 ```json
 { "formato_version": "0.1", "municipio": "merida", "cultivo": "maiz", "es_ejemplo": false,

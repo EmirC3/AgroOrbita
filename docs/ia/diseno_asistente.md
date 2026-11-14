@@ -9,7 +9,7 @@ El asistente **no calcula ni inventa números**. Explica lo que ya calcularon lo
 - RNF-006 Límites: solo cifras del contexto, siempre con fuente, admite lo que no sabe, recuerda RN-001.
 
 ## Flujo
-1. `simulacion/notebooks/10_contexto_asistente.ipynb` genera `resultados/contexto_asistente/<municipio>_<cultivo>.json`.
+1. `data_engineering/simulacion/notebooks/10_contexto_asistente.ipynb` genera `data_engineering/simulacion/resultados/contexto_asistente/<municipio>_<cultivo>.json`.
 2. La pantalla envía pregunta, municipio y cultivo a `web/src/app/api/asistente/route.ts`.
 3. El Route Handler valida con Zod, carga el JSON, arma el prompt (`prompt_sistema.md`) y llama a la API de Claude.
 4. Devuelve la respuesta con fuentes y el aviso de apoyo a la decisión.

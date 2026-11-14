@@ -1,7 +1,7 @@
-"""RF-002: arma datos/metricas/<municipio>.json de los municipios del piloto.
+"""RF-002: arma data_engineering/metrics/<municipio>.json de los municipios del piloto.
 
 Pasos por municipio:
-1. Lee el clima diario: datos/clima/<municipio>.csv (lo de Pablo). Si aún no existe,
+1. Lee el clima diario: data_engineering/raw_data/<municipio>.csv (lo de Pablo). Si aún no existe,
    lo baja de NASA POWER y lo guarda en una carpeta temporal (no en el repositorio).
 2. Le junta las variables para la "sed del aire" (power_yucatan_extra.csv.gz) del punto
    de la cuadrícula de NASA más cercano.
@@ -9,7 +9,7 @@ Pasos por municipio:
 4. Guarda el JSON con el formato de docs/formato_resultados.md.
 
 Cómo correrlo (desde la carpeta AgroOrbita):
-    python datos/src/rf002_generar_metricas.py
+    python data_engineering/scripts/rf002_generar_metricas.py
 """
 import csv
 import gzip
@@ -41,7 +41,7 @@ AJUSTE_TMAX_C = {
 
 def leer_clima_base(m):
     """Regresa {fecha 'AAAAMMDD': {variable: valor}} del municipio."""
-    archivo = DATOS / "clima" / f"{m['municipio']}.csv"
+    archivo = DATOS / "raw_data" / f"{m['municipio']}.csv"
     if archivo.exists():  # archivo de Pablo: se espera una columna por variable de NASA
         with open(archivo, encoding="utf-8") as f:
             filas = list(csv.DictReader(f))
@@ -64,7 +64,7 @@ def leer_clima_base(m):
 
 def leer_extra(m):
     """Variables para la ETo del punto de la cuadrícula más cercano al municipio."""
-    filas = list(csv.DictReader(gzip.open(DATOS / "clima" / "power_yucatan_extra.csv.gz",
+    filas = list(csv.DictReader(gzip.open(DATOS / "raw_data" / "power_yucatan_extra.csv.gz",
                                           "rt", encoding="utf-8")))
     puntos = {(float(r["lat"]), float(r["lon"])) for r in filas}
     lat, lon = min(puntos, key=lambda q: (q[0] - m["lat"]) ** 2 + (q[1] - m["lon"]) ** 2)
@@ -154,13 +154,13 @@ def generar(m):
         "promedio_1985_2025": prom,
         "anios": anios,
     }
-    ruta = DATOS / "metricas" / f"{m['municipio']}.json"
+    ruta = DATOS / "metrics" / f"{m['municipio']}.json"
     ruta.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"  {len(anios)} años ({len(normales)} completos en el normal) -> {ruta.name}")
     return salida
 
 
 if __name__ == "__main__":
-    municipios = json.loads((DATOS / "municipios.json").read_text(encoding="utf-8"))["municipios"]
+    municipios = json.loads((DATOS / "datasets" / "municipios.json").read_text(encoding="utf-8"))["municipios"]
     for m in municipios:
         generar(m)
