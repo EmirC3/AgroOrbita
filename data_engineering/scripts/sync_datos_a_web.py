@@ -1,20 +1,21 @@
-"""Copia los JSON de datos/ y simulacion/ a web/public/data/ (la web solo lee esa carpeta)."""
+"""Copia los JSON de data_engineering/ a web/public/data/ (la web solo lee esa carpeta)."""
 import shutil
 import sys
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parent.parent
-DESTINO = RAIZ / "web" / "public" / "data"
+PROYECTO = Path(__file__).resolve().parents[2]
+RAIZ = PROYECTO / "data_engineering"
+DESTINO = PROYECTO / "web" / "public" / "data"
 
-if not (RAIZ / "web").exists():
+if not (PROYECTO / "web").exists():
     sys.exit("Aún no existe web/. Primero crea la app (ver docs/web_setup.md).")
 
 COPIAS = [
-    (RAIZ / "datos" / "municipios.json", DESTINO / "municipios.json"),
-    (RAIZ / "datos" / "suelo.json", DESTINO / "suelo.json"),
+    (RAIZ / "datasets" / "municipios.json", DESTINO / "municipios.json"),
+    (RAIZ / "datasets" / "suelo.json", DESTINO / "suelo.json"),
 ]
 DIRECTORIOS = [
-    (RAIZ / "datos" / "metricas", DESTINO / "metricas"),
+    (RAIZ / "metrics", DESTINO / "metricas"),
     (RAIZ / "simulacion" / "resultados", DESTINO / "resultados"),
 ]
 

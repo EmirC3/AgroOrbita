@@ -19,12 +19,12 @@ npm install -D drizzle-kit vitest @playwright/test @types/leaflet
 ## 3. Carpetas por feature
 ```bash
 cd ..
-bash scripts/crear_carpetas_web.sh
+bash web/scripts/crear_carpetas_web.sh
 ```
 
 ## 4. Variables de entorno
 ```bash
-cp .env.example web/.env.local
+cp web/.env.example web/.env.local
 ```
 Llenar los valores de Supabase (Project Settings -> API). `ANTHROPIC_API_KEY` solo en `.env.local` y en Vercel. Nunca en el cliente.
 
@@ -36,7 +36,7 @@ Llenar los valores de Supabase (Project Settings -> API). `ANTHROPIC_API_KEY` so
 
 ## 6. Datos de ejemplo
 ```bash
-python scripts/sync_datos_a_web.py
+python data_engineering/scripts/sync_datos_a_web.py
 npm --prefix web run dev
 ```
 Abrir http://localhost:3000. Los archivos `ejemplo_*` traen datos de muestra marcados como ejemplo.

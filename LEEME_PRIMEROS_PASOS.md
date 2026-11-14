@@ -17,7 +17,7 @@ Entrega: domingo 15/11/2026 antes de las 12:00. El código se congela a las 8:00
 5. En `.github/CODEOWNERS` reemplazar los `@REEMPLAZAR-...` por los usuarios reales.
 
 ## Paso 2. Decisiones del equipo (15 min, todos)
-- Elegir los 5 municipios y completar `datos/municipios.json` (hay una propuesta; coordenadas aproximadas, verificar).
+- Elegir los 5 municipios y completar `data_engineering/datasets/municipios.json` (hay una propuesta; coordenadas aproximadas, verificar).
 - Asignar los roles 2 a 6 (Anexo A del ERS).
 
 ## Paso 3. Aprobar el contrato de datos (30 min, roles 1, 2 y 4)
@@ -41,11 +41,11 @@ git checkout -b datos/RF-001-descarga-power
 Seguir `docs/web_setup.md`. Los archivos `ejemplo_*` ya traen datos de muestra marcados como ejemplo,
 así la web avanza sin esperar a los notebooks. Luego se cambian por los reales con:
 ```bash
-python scripts/sync_datos_a_web.py
+python data_engineering/scripts/sync_datos_a_web.py
 ```
 
 ## Paso 6. Integración y ensayo
-- Cuando datos y simulación entreguen JSON reales: `python scripts/validar_formato.py` y luego `sync`.
+- Cuando datos y simulación entreguen JSON reales: `python data_engineering/scripts/validar_formato.py` y luego `sync`.
 - Revisar RNF-003 (cada dato con fuente) y RN-002 (ejemplos marcados).
 - Ensayar la demo completa en la laptop de la presentación.
 - 8:00 del domingo: congelar el código (sin más merges a `main`).

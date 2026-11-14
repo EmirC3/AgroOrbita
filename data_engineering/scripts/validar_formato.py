@@ -28,17 +28,17 @@ def revisar(ruta, tipo):
     if tipo == "rotaciones" and len(datos.get("rotaciones", [])) < 3:
         errores.append(f"{ruta.relative_to(RAIZ)}: se requieren al menos 3 rotaciones (RF-007)")
 
-for p in (RAIZ / "datos" / "metricas").glob("*.json"):
+for p in (RAIZ / "metrics").glob("*.json"):
     revisar(p, "metricas")
 for p in (RAIZ / "simulacion" / "resultados").glob("*.json"):
     tipo = "rotaciones" if p.name.startswith("rotaciones_") else "resultados"
     revisar(p, tipo)
 for p in (RAIZ / "simulacion" / "resultados" / "contexto_asistente").glob("*.json"):
     revisar(p, "contexto")
-if (RAIZ / "datos" / "suelo.json").exists():
-    revisar(RAIZ / "datos" / "suelo.json", "suelo")
-if (RAIZ / "datos" / "municipios.json").exists():
-    revisar(RAIZ / "datos" / "municipios.json", "municipios")
+if (RAIZ / "datasets" / "suelo.json").exists():
+    revisar(RAIZ / "datasets" / "suelo.json", "suelo")
+if (RAIZ / "datasets" / "municipios.json").exists():
+    revisar(RAIZ / "datasets" / "municipios.json", "municipios")
 
 if errores:
     print("Errores de formato:")
