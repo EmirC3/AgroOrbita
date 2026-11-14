@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Crea las carpetas por feature dentro de web/src (ejecutar DESPUÉS de create-next-app).
 set -e
-cd "$(dirname "$0")/../web/src"
+cd "$(dirname "$0")/../src"
 
 for f in zona recomendacion rotaciones auth parcelas cosechas verdor; do
   mkdir -p "features/$f"/{components,hooks,services,validations,types}

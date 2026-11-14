@@ -1,4 +1,4 @@
-# datos/ (Rol 1)
+# data_engineering/ (Rol 1)
 
 Notebooks de Google Colab y funciones de Python para clima, ETo, métricas y verdor.
 Salidas: `clima/`, `metricas/`, `verdor/`. Formato en `docs/formato_resultados.md`.
@@ -8,7 +8,7 @@ Funciones reutilizables en `src/` (`rd001_inicio_lluvias.py`, `rd002_canicula.py
 
 - `clima/power_yucatan_extra.csv.gz`: variables para la ETo (viento a 10 m, punto de rocío, presión,
   sol en cielo despejado, temperatura media) de los 30 puntos de la cuadrícula de NASA que cubren Yucatán,
-  diario 1985-2025. Se genera con `python datos/src/descarga_power_extra.py`.
+  diario 1985-2025. Se genera con `python data_engineering/scripts/descarga_power_extra.py`.
 - La cuadrícula de NASA mide 0.5° × 0.625° (unos 55 × 65 km). Cada municipio usa su punto más cercano.
 
 ## Decisiones

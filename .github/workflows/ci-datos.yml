@@ -1,7 +1,7 @@
 name: ci-datos
 on:
   pull_request:
-    paths: ["datos/**", "simulacion/**", "docs/formato_resultados.md", "scripts/**"]
+    paths: ["data_engineering/**", "docs/formato_resultados.md"]
 jobs:
   validar:
     runs-on: ubuntu-latest
@@ -11,4 +11,4 @@ jobs:
         with:
           python-version: "3.11"
       - name: Validar formato de los JSON
-        run: python scripts/validar_formato.py
+        run: python data_engineering/scripts/validar_formato.py

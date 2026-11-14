@@ -1,6 +1,5 @@
 # Reemplazar @REEMPLAZAR-... por usuarios de GitHub. Cada carpeta tiene su responsable.
-/datos/                 @REEMPLAZAR-rol1
-/simulacion/            @REEMPLAZAR-rol2
+/data_engineering/      @REEMPLAZAR-rol1 @REEMPLAZAR-rol2
 /docs/investigacion/    @REEMPLAZAR-rol3
 /web/                   @REEMPLAZAR-rol4
 /diseno/                @REEMPLAZAR-rol5
