@@ -43,6 +43,28 @@
    0.688
   ]
  },
+ "tendencia_por_decada": {
+  "dias_calor_mayor_35": {
+   "cambio": 9.5,
+   "seguridad_pct": 88
+  },
+  "lluvia_mayo_octubre_mm": {
+   "cambio": 20.7,
+   "seguridad_pct": 42
+  },
+  "deficit_agua_mm": {
+   "cambio": -16.0,
+   "seguridad_pct": 22
+  },
+  "canicula_baja_lluvia_pct": {
+   "cambio": 1.7,
+   "seguridad_pct": 66
+  },
+  "inicio_lluvias_dia_del_anio": {
+   "cambio": -0.6,
+   "seguridad_pct": 15
+  }
+ },
  "anios": [
   {
    "anio": 1985,

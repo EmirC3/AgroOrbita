@@ -26,5 +26,9 @@ Funciones reutilizables en `scripts/` (`rd001_inicio_lluvias.py`, `rd002_canicul
   contar los días de más de 35 °C: pasa de 75 a 117 días al año. El ajuste tiene ±0.5 °C de error
   porque la estación da números redondeados. Los demás municipios usan NASA tal cual hasta conseguir
   sus estaciones. La ETo no se ajusta.
+- **Tendencia (`tendencia_por_decada`):** para cada métrica, cuánto cambia en 10 años (línea recta que
+  mejor pasa entre los años completos 1985-2025) y qué tan seguros estamos de que es real
+  (`seguridad_pct`, prueba de Mann-Kendall; 95 % o más se considera seguro).
+  Funciones en `scripts/tendencia.py`.
 - **`EVPTRNS` no se usa:** es la evapotranspiración real del modelo de NASA, en unidades de energía.
   AquaCrop necesita la evapotranspiración de referencia (ETo), que calculamos con FAO-56 (RF-003).

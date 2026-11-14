@@ -24,6 +24,7 @@ from eto_fao56 import eto
 from rd001_inicio_lluvias import inicio_lluvias
 from rd002_canicula import canicula, canicula_pct, dias_calor
 from rf002_temporada import deficit_agua, humedad_semanal, lluvia_temporada
+from tendencia import tendencia
 
 DATOS = Path(__file__).resolve().parents[1]
 ANIO_INICIO, ANIO_FIN_NORMAL = 1985, 2025   # el "normal" solo usa años completos
@@ -137,6 +138,14 @@ def generar(m):
         "deficit_agua_mm": promedio(normales, "deficit_agua_mm"),
         "humedad_suelo_semanal": [round(statistics.mean(s), 3) if s else None for s in semanas],
     }
+    # Tendencia 1985-2025 (solo años completos): cuánto cambia por década y si es real
+    xs = [a["anio"] for a in normales]
+    tend = {c: tendencia(xs, [a[c] for a in normales])
+            for c in ("dias_calor_mayor_35", "lluvia_mayo_octubre_mm", "deficit_agua_mm",
+                      "canicula_baja_lluvia_pct")}
+    tend["inicio_lluvias_dia_del_anio"] = tendencia(xs, [
+        date.fromisoformat(a["inicio_lluvias"]).timetuple().tm_yday if a["inicio_lluvias"] else None
+        for a in normales])
     for a in anios:
         a["diferencia_vs_promedio"] = {
             c: (a[c] - prom[c]) if a[c] is not None and prom[c] is not None else None
@@ -152,6 +161,7 @@ def generar(m):
         "es_ejemplo": False,
         "punto_cuadricula_nasa": {"lat": punto[0], "lon": punto[1]},
         "promedio_1985_2025": prom,
+        "tendencia_por_decada": tend,
         "anios": anios,
     }
     ruta = DATOS / "metrics" / f"{m['municipio']}.json"
