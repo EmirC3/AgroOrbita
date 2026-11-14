@@ -15,5 +15,10 @@ Funciones reutilizables en `src/` (`rd001_inicio_lluvias.py`, `rd002_canicula.py
 
 - **Viento:** se usa `WS10M` convertido a 2 m con la fórmula FAO-56 (× 0.748), columna `viento_2m_fao_ms`.
   No se usa `WS2M` de NASA porque sus valores (~0.2 m/s) no son creíbles para Yucatán.
+- **Inicio de lluvias (RD-001):** la racha de 20 mm en 3 días debe empezar en un día con 1 mm o más.
+- **Canícula (RD-002):** se mide como % que baja la lluvia diaria de julio-agosto contra junio y
+  septiembre (`canicula_pct`). La racha seca en días sale irreal con NASA POWER (el modelo reparte
+  lloviznas casi a diario). Propuesta para el formato: cambiar `duracion_canicula_dias` por
+  `canicula_baja_lluvia_pct`; pendiente de acordar con Simulación y Web.
 - **`EVPTRNS` no se usa:** es la evapotranspiración real del modelo de NASA, en unidades de energía.
   AquaCrop necesita la evapotranspiración de referencia (ETo), que calculamos con FAO-56 (RF-003).
