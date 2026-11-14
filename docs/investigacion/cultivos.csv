@@ -1,11 +1,11 @@
-cultivo_id,nombre_cultivo,tipo_ciclo,ciclo_dias,kc_inicial,kc_medio,kc_final,temp_optima_min,temp_optima_max,req_agua_mm
-MAIZ_01,Maíz Grano,Anual/Temporal,120,0.30,1.15,0.40,20.0,32.0,500
-PEPI_02,Pepino,Anual/Hortaliza,70,0.60,1.00,0.75,20.0,32.0,380
-TOMA_03,Tomate,Anual/Hortaliza,115,0.60,1.15,0.80,18.0,30.0,550
-SOYA_04,Soya,Anual/Temporal,110,0.40,1.15,0.50,20.0,30.0,450
-HENE_05,Henequén,Perenne,365,0.30,0.45,0.45,22.0,36.0,400
-CALA_06,Calabaza Chihua,Anual/Temporal,100,0.50,1.00,0.80,20.0,32.0,400
-FRIJ_07,Frijol,Anual/Temporal,90,0.40,1.05,0.35,18.0,30.0,350
-XPEL_08,Xpelón,Anual/Temporal,80,0.40,1.05,0.35,20.0,32.0,320
-CHIL_09,Chile Habanero,Anual/Hortaliza,130,0.60,1.05,0.90,20.0,32.0,600
-SAND_10,Sandía,Anual/Hortaliza,85,0.40,1.00,0.75,22.0,35.0,420
+cultivo_id,nombre_cultivo,tipo_ciclo,ciclo_dias,kc_inicial,kc_medio,kc_final,temp_optima_min,temp_optima_max,req_agua_mm,temp_dano_c,medir_con,etapa_delicada,fuente_temp
+MAIZ_01,Maíz Grano,Anual/Temporal,120,0.30,1.15,0.40,20.0,32.0,500,35,tmax,floración,"Luo 2011, Climatic Change 109:583-598, tabla 2 (viabilidad del polen)"
+PEPI_02,Pepino,Anual/Hortaliza,70,0.60,1.00,0.75,20.0,32.0,380,38,tmedia,floración,"FAO ECOCROP Cucumis sativus, máxima absoluta"
+TOMA_03,Tomate,Anual/Hortaliza,115,0.60,1.15,0.80,18.0,30.0,550,32,tmax,floración y cuajado,"Luo 2011, Climatic Change 109:583-598, sec. 3.3 (Peat et al. 1998)"
+SOYA_04,Soya,Anual/Temporal,110,0.40,1.15,0.50,20.0,30.0,450,35,tmax,floración y llenado de vaina,"Luo 2011, Climatic Change 109:583-598, tabla 2 (rendimiento)"
+HENE_05,Henequén,Perenne,365,0.30,0.45,0.45,22.0,36.0,400,40,tmedia,todo el año (perenne),"FAO ECOCROP Agave fourcroydes, máxima absoluta"
+CALA_06,Calabaza Chihua,Anual/Temporal,100,0.50,1.00,0.80,20.0,32.0,400,38,tmedia,floración,"FAO ECOCROP Cucurbita mixta (pariente; C. argyrosperma sin dato), máxima absoluta"
+FRIJ_07,Frijol,Anual/Temporal,90,0.40,1.05,0.35,18.0,30.0,350,32,tmax,floración,"Luo 2011, Climatic Change 109:583-598, sec. 3.2 (Gross y Kigel 1994)"
+XPEL_08,Xpelón,Anual/Temporal,80,0.40,1.05,0.35,20.0,32.0,320,30,tmin,botón floral,"Luo 2011, Climatic Change 109:583-598, sec. 3.2, caupí (Hall 1992); calor de noche"
+CHIL_09,Chile Habanero,Anual/Hortaliza,130,0.60,1.05,0.90,20.0,32.0,600,32,tmedia,floración y cuajado,"FAO ECOCROP Capsicum chinense, máxima absoluta"
+SAND_10,Sandía,Anual/Hortaliza,85,0.40,1.00,0.75,22.0,35.0,420,40,tmedia,floración,"FAO ECOCROP Citrullus lanatus, máxima absoluta"
