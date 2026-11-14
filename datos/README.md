@@ -20,5 +20,11 @@ Funciones reutilizables en `src/` (`rd001_inicio_lluvias.py`, `rd002_canicula.py
   septiembre (`canicula_pct`). La racha seca en días sale irreal con NASA POWER (el modelo reparte
   lloviznas casi a diario). Propuesta para el formato: cambiar `duracion_canicula_dias` por
   `canicula_baja_lluvia_pct`; pendiente de acordar con Simulación y Web.
+- **Días de calor en Mérida (ajustados):** NASA marca la temperatura máxima de 2 a 3 °C más baja que la
+  estación oficial de Mérida (SMN, normales 1991-2020) de junio a octubre. Para Mérida se le suma a la
+  máxima de NASA la diferencia de cada mes (`AJUSTE_TMAX_C` en `rf002_generar_metricas.py`) antes de
+  contar los días de más de 35 °C: pasa de 75 a 117 días al año. El ajuste tiene ±0.5 °C de error
+  porque la estación da números redondeados. Los demás municipios usan NASA tal cual hasta conseguir
+  sus estaciones. La ETo no se ajusta.
 - **`EVPTRNS` no se usa:** es la evapotranspiración real del modelo de NASA, en unidades de energía.
   AquaCrop necesita la evapotranspiración de referencia (ETo), que calculamos con FAO-56 (RF-003).

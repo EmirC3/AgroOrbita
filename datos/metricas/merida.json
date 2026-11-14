@@ -1,7 +1,7 @@
 {
  "formato_version": "0.1",
  "municipio": "merida",
- "fuente": "NASA POWER (community AG); ETo FAO-56 calculada por el equipo",
+ "fuente": "NASA POWER (community AG); ETo FAO-56 calculada por el equipo; días de calor ajustados con la estación SMN de Mérida",
  "es_ejemplo": false,
  "punto_cuadricula_nasa": {
   "lat": 21.0,
@@ -11,7 +11,7 @@
   "inicio_lluvias_dia_del_anio": 149,
   "canicula_baja_lluvia_pct": 15,
   "duracion_canicula_dias": 5,
-  "dias_calor_mayor_35": 75,
+  "dias_calor_mayor_35": 117,
   "lluvia_mayo_octubre_mm": 819,
   "deficit_agua_mm": -3,
   "humedad_suelo_semanal": [
@@ -50,7 +50,7 @@
    "inicio_lluvias": "1985-05-23",
    "canicula_baja_lluvia_pct": 9,
    "duracion_canicula_dias": 8,
-   "dias_calor_mayor_35": 56,
+   "dias_calor_mayor_35": 96,
    "lluvia_mayo_octubre_mm": 765,
    "deficit_agua_mm": 51,
    "humedad_suelo_semanal": [
@@ -83,7 +83,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -54,
-    "dias_calor_mayor_35": -19,
+    "dias_calor_mayor_35": -21,
     "canicula_baja_lluvia_pct": -6,
     "deficit_agua_mm": 54
    }
@@ -94,7 +94,7 @@
    "inicio_lluvias": "1986-05-19",
    "canicula_baja_lluvia_pct": 5,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 62,
+   "dias_calor_mayor_35": 126,
    "lluvia_mayo_octubre_mm": 697,
    "deficit_agua_mm": 137,
    "humedad_suelo_semanal": [
@@ -127,7 +127,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -122,
-    "dias_calor_mayor_35": -13,
+    "dias_calor_mayor_35": 9,
     "canicula_baja_lluvia_pct": -10,
     "deficit_agua_mm": 140
    }
@@ -138,7 +138,7 @@
    "inicio_lluvias": "1987-06-03",
    "canicula_baja_lluvia_pct": 23,
    "duracion_canicula_dias": 9,
-   "dias_calor_mayor_35": 71,
+   "dias_calor_mayor_35": 107,
    "lluvia_mayo_octubre_mm": 730,
    "deficit_agua_mm": 85,
    "humedad_suelo_semanal": [
@@ -171,7 +171,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -89,
-    "dias_calor_mayor_35": -4,
+    "dias_calor_mayor_35": -10,
     "canicula_baja_lluvia_pct": 8,
     "deficit_agua_mm": 88
    }
@@ -182,7 +182,7 @@
    "inicio_lluvias": "1988-05-24",
    "canicula_baja_lluvia_pct": 64,
    "duracion_canicula_dias": 3,
-   "dias_calor_mayor_35": 54,
+   "dias_calor_mayor_35": 69,
    "lluvia_mayo_octubre_mm": 1138,
    "deficit_agua_mm": -387,
    "humedad_suelo_semanal": [
@@ -215,7 +215,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 319,
-    "dias_calor_mayor_35": -21,
+    "dias_calor_mayor_35": -48,
     "canicula_baja_lluvia_pct": 49,
     "deficit_agua_mm": -384
    }
@@ -226,7 +226,7 @@
    "inicio_lluvias": "1989-07-16",
    "canicula_baja_lluvia_pct": 14,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 84,
+   "dias_calor_mayor_35": 96,
    "lluvia_mayo_octubre_mm": 826,
    "deficit_agua_mm": -9,
    "humedad_suelo_semanal": [
@@ -259,7 +259,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 7,
-    "dias_calor_mayor_35": 9,
+    "dias_calor_mayor_35": -21,
     "canicula_baja_lluvia_pct": -1,
     "deficit_agua_mm": -6
    }
@@ -270,7 +270,7 @@
    "inicio_lluvias": "1990-05-19",
    "canicula_baja_lluvia_pct": 47,
    "duracion_canicula_dias": 3,
-   "dias_calor_mayor_35": 41,
+   "dias_calor_mayor_35": 68,
    "lluvia_mayo_octubre_mm": 962,
    "deficit_agua_mm": -172,
    "humedad_suelo_semanal": [
@@ -303,7 +303,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 143,
-    "dias_calor_mayor_35": -34,
+    "dias_calor_mayor_35": -49,
     "canicula_baja_lluvia_pct": 32,
     "deficit_agua_mm": -169
    }
@@ -314,7 +314,7 @@
    "inicio_lluvias": "1991-05-20",
    "canicula_baja_lluvia_pct": -33,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 88,
+   "dias_calor_mayor_35": 134,
    "lluvia_mayo_octubre_mm": 796,
    "deficit_agua_mm": 4,
    "humedad_suelo_semanal": [
@@ -347,7 +347,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -23,
-    "dias_calor_mayor_35": 13,
+    "dias_calor_mayor_35": 17,
     "canicula_baja_lluvia_pct": -48,
     "deficit_agua_mm": 7
    }
@@ -358,7 +358,7 @@
    "inicio_lluvias": "1992-06-04",
    "canicula_baja_lluvia_pct": 21,
    "duracion_canicula_dias": 7,
-   "dias_calor_mayor_35": 44,
+   "dias_calor_mayor_35": 86,
    "lluvia_mayo_octubre_mm": 675,
    "deficit_agua_mm": 115,
    "humedad_suelo_semanal": [
@@ -402,7 +402,7 @@
    "inicio_lluvias": "1993-05-24",
    "canicula_baja_lluvia_pct": 55,
    "duracion_canicula_dias": 6,
-   "dias_calor_mayor_35": 46,
+   "dias_calor_mayor_35": 80,
    "lluvia_mayo_octubre_mm": 828,
    "deficit_agua_mm": -35,
    "humedad_suelo_semanal": [
@@ -435,7 +435,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 9,
-    "dias_calor_mayor_35": -29,
+    "dias_calor_mayor_35": -37,
     "canicula_baja_lluvia_pct": 40,
     "deficit_agua_mm": -32
    }
@@ -446,7 +446,7 @@
    "inicio_lluvias": "1994-05-28",
    "canicula_baja_lluvia_pct": 26,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 71,
+   "dias_calor_mayor_35": 149,
    "lluvia_mayo_octubre_mm": 594,
    "deficit_agua_mm": 248,
    "humedad_suelo_semanal": [
@@ -479,7 +479,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -225,
-    "dias_calor_mayor_35": -4,
+    "dias_calor_mayor_35": 32,
     "canicula_baja_lluvia_pct": 11,
     "deficit_agua_mm": 251
    }
@@ -490,7 +490,7 @@
    "inicio_lluvias": "1995-05-30",
    "canicula_baja_lluvia_pct": 29,
    "duracion_canicula_dias": 3,
-   "dias_calor_mayor_35": 107,
+   "dias_calor_mayor_35": 161,
    "lluvia_mayo_octubre_mm": 782,
    "deficit_agua_mm": 64,
    "humedad_suelo_semanal": [
@@ -523,7 +523,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -37,
-    "dias_calor_mayor_35": 32,
+    "dias_calor_mayor_35": 44,
     "canicula_baja_lluvia_pct": 14,
     "deficit_agua_mm": 67
    }
@@ -534,7 +534,7 @@
    "inicio_lluvias": "1996-06-03",
    "canicula_baja_lluvia_pct": 2,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 95,
+   "dias_calor_mayor_35": 166,
    "lluvia_mayo_octubre_mm": 533,
    "deficit_agua_mm": 316,
    "humedad_suelo_semanal": [
@@ -567,7 +567,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -286,
-    "dias_calor_mayor_35": 20,
+    "dias_calor_mayor_35": 49,
     "canicula_baja_lluvia_pct": -13,
     "deficit_agua_mm": 319
    }
@@ -578,7 +578,7 @@
    "inicio_lluvias": "1997-05-15",
    "canicula_baja_lluvia_pct": -20,
    "duracion_canicula_dias": 3,
-   "dias_calor_mayor_35": 65,
+   "dias_calor_mayor_35": 86,
    "lluvia_mayo_octubre_mm": 848,
    "deficit_agua_mm": -47,
    "humedad_suelo_semanal": [
@@ -611,7 +611,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 29,
-    "dias_calor_mayor_35": -10,
+    "dias_calor_mayor_35": -31,
     "canicula_baja_lluvia_pct": -35,
     "deficit_agua_mm": -44
    }
@@ -622,7 +622,7 @@
    "inicio_lluvias": "1998-06-19",
    "canicula_baja_lluvia_pct": -11,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 78,
+   "dias_calor_mayor_35": 87,
    "lluvia_mayo_octubre_mm": 963,
    "deficit_agua_mm": -144,
    "humedad_suelo_semanal": [
@@ -655,7 +655,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 144,
-    "dias_calor_mayor_35": 3,
+    "dias_calor_mayor_35": -30,
     "canicula_baja_lluvia_pct": -26,
     "deficit_agua_mm": -141
    }
@@ -666,7 +666,7 @@
    "inicio_lluvias": "1999-06-29",
    "canicula_baja_lluvia_pct": 14,
    "duracion_canicula_dias": 8,
-   "dias_calor_mayor_35": 88,
+   "dias_calor_mayor_35": 146,
    "lluvia_mayo_octubre_mm": 664,
    "deficit_agua_mm": 174,
    "humedad_suelo_semanal": [
@@ -699,7 +699,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -155,
-    "dias_calor_mayor_35": 13,
+    "dias_calor_mayor_35": 29,
     "canicula_baja_lluvia_pct": -1,
     "deficit_agua_mm": 177
    }
@@ -710,7 +710,7 @@
    "inicio_lluvias": "2000-06-02",
    "canicula_baja_lluvia_pct": -33,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 85,
+   "dias_calor_mayor_35": 128,
    "lluvia_mayo_octubre_mm": 669,
    "deficit_agua_mm": 159,
    "humedad_suelo_semanal": [
@@ -743,7 +743,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -150,
-    "dias_calor_mayor_35": 10,
+    "dias_calor_mayor_35": 11,
     "canicula_baja_lluvia_pct": -48,
     "deficit_agua_mm": 162
    }
@@ -754,7 +754,7 @@
    "inicio_lluvias": "2001-05-24",
    "canicula_baja_lluvia_pct": -24,
    "duracion_canicula_dias": 2,
-   "dias_calor_mayor_35": 63,
+   "dias_calor_mayor_35": 98,
    "lluvia_mayo_octubre_mm": 816,
    "deficit_agua_mm": -27,
    "humedad_suelo_semanal": [
@@ -787,7 +787,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -3,
-    "dias_calor_mayor_35": -12,
+    "dias_calor_mayor_35": -19,
     "canicula_baja_lluvia_pct": -39,
     "deficit_agua_mm": -24
    }
@@ -798,7 +798,7 @@
    "inicio_lluvias": "2002-05-18",
    "canicula_baja_lluvia_pct": 71,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 67,
+   "dias_calor_mayor_35": 77,
    "lluvia_mayo_octubre_mm": 1191,
    "deficit_agua_mm": -400,
    "humedad_suelo_semanal": [
@@ -831,7 +831,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 372,
-    "dias_calor_mayor_35": -8,
+    "dias_calor_mayor_35": -40,
     "canicula_baja_lluvia_pct": 56,
     "deficit_agua_mm": -397
    }
@@ -842,7 +842,7 @@
    "inicio_lluvias": "2003-05-29",
    "canicula_baja_lluvia_pct": -2,
    "duracion_canicula_dias": 3,
-   "dias_calor_mayor_35": 90,
+   "dias_calor_mayor_35": 129,
    "lluvia_mayo_octubre_mm": 769,
    "deficit_agua_mm": 73,
    "humedad_suelo_semanal": [
@@ -875,7 +875,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -50,
-    "dias_calor_mayor_35": 15,
+    "dias_calor_mayor_35": 12,
     "canicula_baja_lluvia_pct": -17,
     "deficit_agua_mm": 76
    }
@@ -886,7 +886,7 @@
    "inicio_lluvias": "2004-05-02",
    "canicula_baja_lluvia_pct": 9,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 57,
+   "dias_calor_mayor_35": 120,
    "lluvia_mayo_octubre_mm": 848,
    "deficit_agua_mm": -14,
    "humedad_suelo_semanal": [
@@ -919,7 +919,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 29,
-    "dias_calor_mayor_35": -18,
+    "dias_calor_mayor_35": 3,
     "canicula_baja_lluvia_pct": -6,
     "deficit_agua_mm": -11
    }
@@ -930,7 +930,7 @@
    "inicio_lluvias": "2005-05-29",
    "canicula_baja_lluvia_pct": 24,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 63,
+   "dias_calor_mayor_35": 96,
    "lluvia_mayo_octubre_mm": 857,
    "deficit_agua_mm": -76,
    "humedad_suelo_semanal": [
@@ -963,7 +963,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 38,
-    "dias_calor_mayor_35": -12,
+    "dias_calor_mayor_35": -21,
     "canicula_baja_lluvia_pct": 9,
     "deficit_agua_mm": -73
    }
@@ -974,7 +974,7 @@
    "inicio_lluvias": "2006-05-21",
    "canicula_baja_lluvia_pct": -62,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 54,
+   "dias_calor_mayor_35": 128,
    "lluvia_mayo_octubre_mm": 664,
    "deficit_agua_mm": 147,
    "humedad_suelo_semanal": [
@@ -1007,7 +1007,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -155,
-    "dias_calor_mayor_35": -21,
+    "dias_calor_mayor_35": 11,
     "canicula_baja_lluvia_pct": -77,
     "deficit_agua_mm": 150
    }
@@ -1018,7 +1018,7 @@
    "inicio_lluvias": "2007-05-27",
    "canicula_baja_lluvia_pct": -10,
    "duracion_canicula_dias": 6,
-   "dias_calor_mayor_35": 55,
+   "dias_calor_mayor_35": 85,
    "lluvia_mayo_octubre_mm": 867,
    "deficit_agua_mm": -64,
    "humedad_suelo_semanal": [
@@ -1051,7 +1051,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 48,
-    "dias_calor_mayor_35": -20,
+    "dias_calor_mayor_35": -32,
     "canicula_baja_lluvia_pct": -25,
     "deficit_agua_mm": -61
    }
@@ -1062,7 +1062,7 @@
    "inicio_lluvias": "2008-06-08",
    "canicula_baja_lluvia_pct": 61,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 68,
+   "dias_calor_mayor_35": 98,
    "lluvia_mayo_octubre_mm": 748,
    "deficit_agua_mm": 59,
    "humedad_suelo_semanal": [
@@ -1095,7 +1095,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -71,
-    "dias_calor_mayor_35": -7,
+    "dias_calor_mayor_35": -19,
     "canicula_baja_lluvia_pct": 46,
     "deficit_agua_mm": 62
    }
@@ -1106,7 +1106,7 @@
    "inicio_lluvias": "2009-06-01",
    "canicula_baja_lluvia_pct": 10,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 105,
+   "dias_calor_mayor_35": 181,
    "lluvia_mayo_octubre_mm": 572,
    "deficit_agua_mm": 319,
    "humedad_suelo_semanal": [
@@ -1139,7 +1139,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -247,
-    "dias_calor_mayor_35": 30,
+    "dias_calor_mayor_35": 64,
     "canicula_baja_lluvia_pct": -5,
     "deficit_agua_mm": 322
    }
@@ -1150,7 +1150,7 @@
    "inicio_lluvias": "2010-05-16",
    "canicula_baja_lluvia_pct": -28,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 66,
+   "dias_calor_mayor_35": 74,
    "lluvia_mayo_octubre_mm": 908,
    "deficit_agua_mm": -117,
    "humedad_suelo_semanal": [
@@ -1183,7 +1183,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 89,
-    "dias_calor_mayor_35": -9,
+    "dias_calor_mayor_35": -43,
     "canicula_baja_lluvia_pct": -43,
     "deficit_agua_mm": -114
    }
@@ -1194,7 +1194,7 @@
    "inicio_lluvias": "2011-06-10",
    "canicula_baja_lluvia_pct": 30,
    "duracion_canicula_dias": 3,
-   "dias_calor_mayor_35": 85,
+   "dias_calor_mayor_35": 116,
    "lluvia_mayo_octubre_mm": 841,
    "deficit_agua_mm": -34,
    "humedad_suelo_semanal": [
@@ -1227,7 +1227,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 22,
-    "dias_calor_mayor_35": 10,
+    "dias_calor_mayor_35": -1,
     "canicula_baja_lluvia_pct": 15,
     "deficit_agua_mm": -31
    }
@@ -1238,7 +1238,7 @@
    "inicio_lluvias": "2012-05-29",
    "canicula_baja_lluvia_pct": 26,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 46,
+   "dias_calor_mayor_35": 60,
    "lluvia_mayo_octubre_mm": 773,
    "deficit_agua_mm": 14,
    "humedad_suelo_semanal": [
@@ -1271,7 +1271,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -46,
-    "dias_calor_mayor_35": -29,
+    "dias_calor_mayor_35": -57,
     "canicula_baja_lluvia_pct": 11,
     "deficit_agua_mm": 17
    }
@@ -1282,7 +1282,7 @@
    "inicio_lluvias": "2013-05-24",
    "canicula_baja_lluvia_pct": 29,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 64,
+   "dias_calor_mayor_35": 66,
    "lluvia_mayo_octubre_mm": 1045,
    "deficit_agua_mm": -303,
    "humedad_suelo_semanal": [
@@ -1315,7 +1315,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 226,
-    "dias_calor_mayor_35": -11,
+    "dias_calor_mayor_35": -51,
     "canicula_baja_lluvia_pct": 14,
     "deficit_agua_mm": -300
    }
@@ -1326,7 +1326,7 @@
    "inicio_lluvias": "2014-05-30",
    "canicula_baja_lluvia_pct": -11,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 75,
+   "dias_calor_mayor_35": 126,
    "lluvia_mayo_octubre_mm": 847,
    "deficit_agua_mm": -39,
    "humedad_suelo_semanal": [
@@ -1359,7 +1359,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 28,
-    "dias_calor_mayor_35": 0,
+    "dias_calor_mayor_35": 9,
     "canicula_baja_lluvia_pct": -26,
     "deficit_agua_mm": -36
    }
@@ -1370,7 +1370,7 @@
    "inicio_lluvias": "2015-05-31",
    "canicula_baja_lluvia_pct": 38,
    "duracion_canicula_dias": 8,
-   "dias_calor_mayor_35": 100,
+   "dias_calor_mayor_35": 156,
    "lluvia_mayo_octubre_mm": 641,
    "deficit_agua_mm": 200,
    "humedad_suelo_semanal": [
@@ -1403,7 +1403,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -178,
-    "dias_calor_mayor_35": 25,
+    "dias_calor_mayor_35": 39,
     "canicula_baja_lluvia_pct": 23,
     "deficit_agua_mm": 203
    }
@@ -1414,7 +1414,7 @@
    "inicio_lluvias": "2016-05-17",
    "canicula_baja_lluvia_pct": 26,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 97,
+   "dias_calor_mayor_35": 175,
    "lluvia_mayo_octubre_mm": 643,
    "deficit_agua_mm": 223,
    "humedad_suelo_semanal": [
@@ -1447,7 +1447,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -176,
-    "dias_calor_mayor_35": 22,
+    "dias_calor_mayor_35": 58,
     "canicula_baja_lluvia_pct": 11,
     "deficit_agua_mm": 226
    }
@@ -1458,7 +1458,7 @@
    "inicio_lluvias": "2017-06-09",
    "canicula_baja_lluvia_pct": 35,
    "duracion_canicula_dias": 2,
-   "dias_calor_mayor_35": 64,
+   "dias_calor_mayor_35": 91,
    "lluvia_mayo_octubre_mm": 872,
    "deficit_agua_mm": -73,
    "humedad_suelo_semanal": [
@@ -1491,7 +1491,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 53,
-    "dias_calor_mayor_35": -11,
+    "dias_calor_mayor_35": -26,
     "canicula_baja_lluvia_pct": 20,
     "deficit_agua_mm": -70
    }
@@ -1502,7 +1502,7 @@
    "inicio_lluvias": "2018-05-23",
    "canicula_baja_lluvia_pct": 10,
    "duracion_canicula_dias": 6,
-   "dias_calor_mayor_35": 68,
+   "dias_calor_mayor_35": 144,
    "lluvia_mayo_octubre_mm": 706,
    "deficit_agua_mm": 118,
    "humedad_suelo_semanal": [
@@ -1535,7 +1535,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -113,
-    "dias_calor_mayor_35": -7,
+    "dias_calor_mayor_35": 27,
     "canicula_baja_lluvia_pct": -5,
     "deficit_agua_mm": 121
    }
@@ -1546,7 +1546,7 @@
    "inicio_lluvias": "2019-05-04",
    "canicula_baja_lluvia_pct": 29,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 112,
+   "dias_calor_mayor_35": 185,
    "lluvia_mayo_octubre_mm": 810,
    "deficit_agua_mm": 67,
    "humedad_suelo_semanal": [
@@ -1579,7 +1579,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -9,
-    "dias_calor_mayor_35": 37,
+    "dias_calor_mayor_35": 68,
     "canicula_baja_lluvia_pct": 14,
     "deficit_agua_mm": 70
    }
@@ -1590,7 +1590,7 @@
    "inicio_lluvias": "2020-05-07",
    "canicula_baja_lluvia_pct": 71,
    "duracion_canicula_dias": 3,
-   "dias_calor_mayor_35": 81,
+   "dias_calor_mayor_35": 94,
    "lluvia_mayo_octubre_mm": 1598,
    "deficit_agua_mm": -835,
    "humedad_suelo_semanal": [
@@ -1623,7 +1623,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 779,
-    "dias_calor_mayor_35": 6,
+    "dias_calor_mayor_35": -23,
     "canicula_baja_lluvia_pct": 56,
     "deficit_agua_mm": -832
    }
@@ -1634,7 +1634,7 @@
    "inicio_lluvias": "2021-05-14",
    "canicula_baja_lluvia_pct": 41,
    "duracion_canicula_dias": 9,
-   "dias_calor_mayor_35": 59,
+   "dias_calor_mayor_35": 114,
    "lluvia_mayo_octubre_mm": 921,
    "deficit_agua_mm": -103,
    "humedad_suelo_semanal": [
@@ -1667,7 +1667,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 102,
-    "dias_calor_mayor_35": -16,
+    "dias_calor_mayor_35": -3,
     "canicula_baja_lluvia_pct": 26,
     "deficit_agua_mm": -100
    }
@@ -1678,7 +1678,7 @@
    "inicio_lluvias": "2022-05-26",
    "canicula_baja_lluvia_pct": 0,
    "duracion_canicula_dias": 2,
-   "dias_calor_mayor_35": 69,
+   "dias_calor_mayor_35": 107,
    "lluvia_mayo_octubre_mm": 807,
    "deficit_agua_mm": -15,
    "humedad_suelo_semanal": [
@@ -1711,7 +1711,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -12,
-    "dias_calor_mayor_35": -6,
+    "dias_calor_mayor_35": -10,
     "canicula_baja_lluvia_pct": -15,
     "deficit_agua_mm": -12
    }
@@ -1722,7 +1722,7 @@
    "inicio_lluvias": "2023-06-23",
    "canicula_baja_lluvia_pct": -38,
    "duracion_canicula_dias": 3,
-   "dias_calor_mayor_35": 115,
+   "dias_calor_mayor_35": 203,
    "lluvia_mayo_octubre_mm": 618,
    "deficit_agua_mm": 264,
    "humedad_suelo_semanal": [
@@ -1755,7 +1755,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -201,
-    "dias_calor_mayor_35": 40,
+    "dias_calor_mayor_35": 86,
     "canicula_baja_lluvia_pct": -53,
     "deficit_agua_mm": 267
    }
@@ -1766,7 +1766,7 @@
    "inicio_lluvias": "2024-06-09",
    "canicula_baja_lluvia_pct": 33,
    "duracion_canicula_dias": 4,
-   "dias_calor_mayor_35": 96,
+   "dias_calor_mayor_35": 113,
    "lluvia_mayo_octubre_mm": 1050,
    "deficit_agua_mm": -251,
    "humedad_suelo_semanal": [
@@ -1799,7 +1799,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 231,
-    "dias_calor_mayor_35": 21,
+    "dias_calor_mayor_35": -4,
     "canicula_baja_lluvia_pct": 18,
     "deficit_agua_mm": -248
    }
@@ -1810,7 +1810,7 @@
    "inicio_lluvias": "2025-06-19",
    "canicula_baja_lluvia_pct": 39,
    "duracion_canicula_dias": 6,
-   "dias_calor_mayor_35": 134,
+   "dias_calor_mayor_35": 180,
    "lluvia_mayo_octubre_mm": 688,
    "deficit_agua_mm": 185,
    "humedad_suelo_semanal": [
@@ -1843,7 +1843,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": -131,
-    "dias_calor_mayor_35": 59,
+    "dias_calor_mayor_35": 63,
     "canicula_baja_lluvia_pct": 24,
     "deficit_agua_mm": 188
    }
@@ -1854,7 +1854,7 @@
    "inicio_lluvias": "2026-07-06",
    "canicula_baja_lluvia_pct": 33,
    "duracion_canicula_dias": 5,
-   "dias_calor_mayor_35": 75,
+   "dias_calor_mayor_35": 125,
    "lluvia_mayo_octubre_mm": 942,
    "deficit_agua_mm": -942,
    "humedad_suelo_semanal": [
@@ -1887,7 +1887,7 @@
    ],
    "diferencia_vs_promedio": {
     "lluvia_mayo_octubre_mm": 123,
-    "dias_calor_mayor_35": 0,
+    "dias_calor_mayor_35": 8,
     "canicula_baja_lluvia_pct": 18,
     "deficit_agua_mm": -939
    }

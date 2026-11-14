@@ -31,6 +31,13 @@ MAX_FALTANTES = 0.10                        # más de 10 % de días sin dato = a
 BASE = ["T2M_MAX", "T2M_MIN", "PRECTOTCORR", "GWETROOT", "ALLSKY_SFC_SW_DWN"]
 CACHE = Path(tempfile.gettempdir()) / "agroorbita_power"
 
+# NASA marca la temperatura máxima más baja que la estación oficial de Mérida (SMN, normales
+# 1991-2020), sobre todo en lluvias. Esto se le suma a la máxima de NASA, por mes (ene..dic).
+# Solo Mérida tiene estación revisada; los demás municipios usan NASA tal cual.
+AJUSTE_TMAX_C = {
+    "merida": [0.8, 0.7, -0.6, -0.7, 0.0, 1.8, 2.5, 2.8, 2.9, 3.2, 1.7, 0.8],
+}
+
 
 def leer_clima_base(m):
     """Regresa {fecha 'AAAAMMDD': {variable: valor}} del municipio."""
@@ -73,10 +80,12 @@ def num(v):
     return None if v == -999 else v
 
 
-def metricas_de_un_anio(anio, dias, base, extra):
+def metricas_de_un_anio(anio, dias, base, extra, ajuste=None):
     fechas = [date(anio, int(d[4:6]), int(d[6:])) for d in dias]
     lluvia = [num(base[d]["PRECTOTCORR"]) for d in dias]
     tmax = [num(base[d]["T2M_MAX"]) for d in dias]
+    if ajuste:  # solo para contar días de calor; la ETo sigue con el dato de NASA
+        tmax = [None if t is None else t + ajuste[f.month - 1] for t, f in zip(tmax, fechas)]
     etos = []
     for d in dias:
         x = extra.get(d)
@@ -112,7 +121,7 @@ def generar(m):
     anios = []
     for anio in sorted({int(d[:4]) for d in base}):
         dias = sorted(d for d in base if d.startswith(str(anio)))
-        anios.append(metricas_de_un_anio(anio, dias, base, extra))
+        anios.append(metricas_de_un_anio(anio, dias, base, extra, AJUSTE_TMAX_C.get(m["municipio"])))
 
     normales = [a for a in anios if a["completo"] and a["anio"] <= ANIO_FIN_NORMAL]
     doy = [date.fromisoformat(a["inicio_lluvias"]).timetuple().tm_yday
@@ -137,7 +146,9 @@ def generar(m):
     salida = {
         "formato_version": "0.1",
         "municipio": m["municipio"],
-        "fuente": "NASA POWER (community AG); ETo FAO-56 calculada por el equipo",
+        "fuente": "NASA POWER (community AG); ETo FAO-56 calculada por el equipo"
+                  + ("; días de calor ajustados con la estación SMN de Mérida"
+                     if m["municipio"] in AJUSTE_TMAX_C else ""),
         "es_ejemplo": False,
         "punto_cuadricula_nasa": {"lat": punto[0], "lon": punto[1]},
         "promedio_1985_2025": prom,
