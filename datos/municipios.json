@@ -1,6 +1,6 @@
 {
   "formato_version": "0.1",
-  "nota": "PROPUESTA por confirmar. Coordenadas aproximadas: verificar antes de descargar datos.",
+  "nota": "Piloto confirmado por el equipo el 14/11/2026. Coordenadas aproximadas de la cabecera municipal.",
   "municipios": [
     {
       "municipio": "merida",
@@ -27,10 +27,10 @@
       "lon": -89.29
     },
     {
-      "municipio": "ticul",
-      "nombre": "Ticul",
-      "lat": 20.4,
-      "lon": -89.54
+      "municipio": "oxkutzcab",
+      "nombre": "Oxkutzcab",
+      "lat": 20.3,
+      "lon": -89.42
     }
   ]
 }
