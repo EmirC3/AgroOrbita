@@ -1,0 +1,36 @@
+{
+  "formato_version": "0.1",
+  "nota": "PROPUESTA por confirmar. Coordenadas aproximadas: verificar antes de descargar datos.",
+  "municipios": [
+    {
+      "municipio": "merida",
+      "nombre": "Mérida",
+      "lat": 20.97,
+      "lon": -89.62
+    },
+    {
+      "municipio": "tizimin",
+      "nombre": "Tizimín",
+      "lat": 21.14,
+      "lon": -88.15
+    },
+    {
+      "municipio": "valladolid",
+      "nombre": "Valladolid",
+      "lat": 20.69,
+      "lon": -88.2
+    },
+    {
+      "municipio": "tekax",
+      "nombre": "Tekax",
+      "lat": 20.2,
+      "lon": -89.29
+    },
+    {
+      "municipio": "ticul",
+      "nombre": "Ticul",
+      "lat": 20.4,
+      "lon": -89.54
+    }
+  ]
+}

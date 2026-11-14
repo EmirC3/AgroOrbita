@@ -1,0 +1,14 @@
+name: ci-datos
+on:
+  pull_request:
+    paths: ["datos/**", "simulacion/**", "docs/formato_resultados.md", "scripts/**"]
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validar formato de los JSON
+        run: python scripts/validar_formato.py

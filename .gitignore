@@ -1,0 +1,16 @@
+# Sistema
+.DS_Store
+Thumbs.db
+# Node / Next.js
+node_modules/
+.next/
+out/
+# Python / Colab
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+# Secretos: nunca subir
+.env
+.env.local
+.env.*.local

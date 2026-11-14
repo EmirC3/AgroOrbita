@@ -1,0 +1,40 @@
+{
+  "formato_version": "0.1",
+  "municipio": "ejemplo",
+  "cultivo": "maiz",
+  "es_ejemplo": true,
+  "zona": {
+    "suelo": "franco arcilloso",
+    "lluvia_mayo_octubre_mm": 780,
+    "canicula_dias": 18
+  },
+  "recomendacion": {
+    "semana": "S4",
+    "probabilidad_pct": 68
+  },
+  "rotaciones_resumen": [
+    {
+      "nombre": "Maíz, frijol, maíz",
+      "por_que": "Ejemplo."
+    }
+  ],
+  "riesgos": [
+    "Ejemplo: canícula en julio y agosto."
+  ],
+  "vacios_informacion": [
+    "Ejemplo: sin datos de plagas."
+  ],
+  "fuentes": [
+    "ejemplo"
+  ],
+  "explicaciones": {
+    "por_que_semana": "Ejemplo: en 27 de 40 años esa semana dio buena cosecha.",
+    "por_que_riesgo": "Ejemplo.",
+    "glosario": [
+      {
+        "termino": "canícula",
+        "explicacion": "Periodo seco en medio de la temporada de lluvias."
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "formato_version": "0.1",
+  "municipio": "ejemplo",
+  "cultivo": "maiz",
+  "fuente": "ejemplo",
+  "es_ejemplo": true,
+  "rendimiento_maximo_t_ha": 3.4,
+  "umbral_buena_cosecha_t_ha": 2.38,
+  "semanas_siembra": [
+    "2024-05-06",
+    "2024-05-13",
+    "2024-05-20",
+    "2024-05-27"
+  ],
+  "rendimiento_por_anio": {
+    "2023": {
+      "S1": 2.0,
+      "S2": 2.3,
+      "S3": 2.5,
+      "S4": 2.6
+    },
+    "2024": {
+      "S1": 2.4,
+      "S2": 2.6,
+      "S3": 2.7,
+      "S4": 2.8
+    }
+  },
+  "resumen_por_semana": [
+    {
+      "semana": "S1",
+      "anios_buena_cosecha": 22,
+      "anios_totales": 40,
+      "probabilidad_pct": 55,
+      "rendimiento_probable_t_ha": 2.2
+    },
+    {
+      "semana": "S2",
+      "anios_buena_cosecha": 24,
+      "anios_totales": 40,
+      "probabilidad_pct": 60,
+      "rendimiento_probable_t_ha": 2.3
+    },
+    {
+      "semana": "S3",
+      "anios_buena_cosecha": 26,
+      "anios_totales": 40,
+      "probabilidad_pct": 65,
+      "rendimiento_probable_t_ha": 2.4
+    },
+    {
+      "semana": "S4",
+      "anios_buena_cosecha": 27,
+      "anios_totales": 40,
+      "probabilidad_pct": 68,
+      "rendimiento_probable_t_ha": 2.5
+    }
+  ],
+  "recomendacion": {
+    "semana": "S4",
+    "probabilidad_pct": 68,
+    "rendimiento_probable_t_ha": 2.5,
+    "frase": "En 27 de 40 años sembrar esa semana dio buena cosecha.",
+    "alerta_alto_riesgo": false
+  },
+  "ajuste": {
+    "factor": 1.0,
+    "n_cosechas": 0,
+    "preliminar": true
+  },
+  "corridas_fallidas": []
+}

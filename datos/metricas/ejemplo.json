@@ -1,0 +1,61 @@
+{
+  "formato_version": "0.1",
+  "municipio": "ejemplo",
+  "fuente": "ejemplo",
+  "es_ejemplo": true,
+  "promedio_1985_2025": {
+    "inicio_lluvias_dia_del_anio": 160,
+    "duracion_canicula_dias": 18,
+    "dias_calor_mayor_35": 95,
+    "lluvia_mayo_octubre_mm": 780,
+    "deficit_agua_mm": 310,
+    "humedad_suelo_semanal": [
+      0.22,
+      0.25,
+      0.28,
+      0.3
+    ]
+  },
+  "anios": [
+    {
+      "anio": 2023,
+      "completo": true,
+      "inicio_lluvias": "2023-06-10",
+      "duracion_canicula_dias": 21,
+      "dias_calor_mayor_35": 110,
+      "lluvia_mayo_octubre_mm": 720,
+      "deficit_agua_mm": 340,
+      "humedad_suelo_semanal": [
+        0.2,
+        0.23,
+        0.27,
+        0.29
+      ],
+      "diferencia_vs_promedio": {
+        "lluvia_mayo_octubre_mm": -60,
+        "dias_calor_mayor_35": 15,
+        "duracion_canicula_dias": 3
+      }
+    },
+    {
+      "anio": 2024,
+      "completo": true,
+      "inicio_lluvias": null,
+      "duracion_canicula_dias": 12,
+      "dias_calor_mayor_35": 88,
+      "lluvia_mayo_octubre_mm": 840,
+      "deficit_agua_mm": 270,
+      "humedad_suelo_semanal": [
+        0.24,
+        0.27,
+        0.31,
+        0.33
+      ],
+      "diferencia_vs_promedio": {
+        "lluvia_mayo_octubre_mm": 60,
+        "dias_calor_mayor_35": -7,
+        "duracion_canicula_dias": -6
+      }
+    }
+  ]
+}
