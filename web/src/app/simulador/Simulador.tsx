@@ -328,9 +328,9 @@ export function Simulador({ municipio, inicioLluviasDia, cultivos, rotaciones, c
                 {enFloracion ? (
                   <>
                     <p className="aparecer rounded-xl bg-white/80 px-3 py-2 text-sm text-gray-800">
-                      💧 <strong>{consejoRiego(cultivo, evaluacion, diaSiembra).titulo}.</strong> Al florecer le faltó agua{' '}
-                      {evaluacion.aniosFalta} de cada 10 años.
-                      {plan ? ` Si no llueve: ${textoPlan(plan)}.` : ''}
+                      💧 <strong>{consejoRiego(cultivo, evaluacion, diaSiembra).titulo}.</strong>
+                      {plan ? ` Si no llueve, riega ${textoPlan(plan)}.` : ''}
+                      {evaluacion.aniosFalta > 0 ? ` Lo vas a necesitar ${evaluacion.aniosFalta} de cada 10 años.` : ''}
                     </p>
                     <p className="aparecer rounded-xl bg-white/80 px-3 py-2 text-sm text-gray-800">
                       🔥{' '}
@@ -460,7 +460,7 @@ function Resultado({
 
       <div className="rounded-3xl border border-gray-200 bg-white p-5">
         <h3 className="font-bold text-gray-900">Si lo siembras así 10 años…</h3>
-        <p className="text-sm text-gray-600">Cada maceta es un año. Las que tienen sed son años en que habrías tenido que regar al florecer.</p>
+        <p className="text-sm text-gray-600">Cada maceta es un año. Las que piden agua son años en que tendrás que regar en la floración.</p>
         <div className="mt-3 grid grid-cols-5 gap-1 sm:grid-cols-10">
           {Array.from({ length: 10 }).map((_, i) => {
             const conSed = i < evaluacion.aniosFalta;
@@ -478,7 +478,7 @@ function Resultado({
         </div>
         <p className="mt-2 text-sm font-semibold text-gray-800">
           {10 - evaluacion.aniosFalta} años buenos · {evaluacion.aniosFalta} con riego necesario
-          {evaluacion.semanasFalta > 0 ? ` · en un año típico faltó agua ${evaluacion.semanasFalta} de ${cultivo.semanas_del_ciclo} semanas` : ''}
+          {evaluacion.semanasFalta > 0 ? ` · en un año típico, planea riego ${evaluacion.semanasFalta} de ${cultivo.semanas_del_ciclo} semanas` : ''}
         </p>
       </div>
 
@@ -498,7 +498,7 @@ function Resultado({
                   </span>
                   <span className="w-12 text-right text-sm font-bold text-gray-800">{e.salud}</span>
                   <span className="w-20 text-xs font-semibold text-gray-600">
-                    {esMejor ? '🏆 Mejor' : elegida ? 'Tu fecha' : `${e.aniosFalta}/10 sed`}
+                    {esMejor ? '🏆 Mejor' : elegida ? 'Tu fecha' : `riego ${e.aniosFalta}/10`}
                   </span>
                 </li>
               );
@@ -518,7 +518,7 @@ function Resultado({
           <ul className="mt-2 space-y-1 text-sm text-gray-800">
             {rotaciones.map((r) => (
               <li key={r.id}>
-                {r.cultivos.map((c) => apariencia(c).emoji).join(' ')} {r.nombre} — falta agua {r.anios_con_falta_agua_de_cada_10} de cada 10 años
+                {r.cultivos.map((c) => apariencia(c).emoji).join(' ')} {r.nombre} — necesita riego {r.anios_con_falta_agua_de_cada_10} de cada 10 años
                 {r.suelo.nitrogeno ? ', aporta nitrógeno' : ''}
               </li>
             ))}

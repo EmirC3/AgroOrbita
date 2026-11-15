@@ -26,7 +26,7 @@ function consejoDelLugar(m: MetricasMunicipio): string {
         mejor.dias_desde_inicio_lluvias > 0
           ? `${mejor.dias_desde_inicio_lluvias / 7} semanas después`
           : `${-mejor.dias_desde_inicio_lluvias / 7} semanas antes`;
-      return `Las lluvias suelen empezar el ${inicio}. Si siembras maíz ${cuando} de las primeras lluvias, le falta agua en la floración ${mejor.anios_con_falta_agua_de_cada_10} de cada 10 años (en vez de ${tipica.anios_con_falta_agua_de_cada_10}).`;
+      return `Las lluvias suelen empezar el ${inicio}. Si siembras maíz ${cuando} de las primeras lluvias, solo tendrás que regar en la floración ${mejor.anios_con_falta_agua_de_cada_10} de cada 10 años (en vez de ${tipica.anios_con_falta_agua_de_cada_10}).`;
     }
     return `Las lluvias suelen empezar el ${inicio}. Para el maíz, sembrar con las primeras lluvias es lo que mejor ha funcionado aquí.`;
   }
