@@ -19,6 +19,8 @@ const APARIENCIA: Record<string, AparienciaCultivo> = {
   XPEL_08: { emoji: '🫛', fruto: '#558B2F', fondo: 'bg-green-50' },
   CHIL_09: { emoji: '🌶️', fruto: '#FF5722', fondo: 'bg-orange-50' },
   SAND_10: { emoji: '🍉', fruto: '#388E3C', fondo: 'bg-sky-50' },
+  JICA_11: { emoji: '🧅', fruto: '#A1887F', fondo: 'bg-stone-50' },
+  MELO_12: { emoji: '🍈', fruto: '#AED581', fondo: 'bg-lime-50' },
 };
 
 export function apariencia(id: string): AparienciaCultivo {
