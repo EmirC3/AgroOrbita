@@ -92,6 +92,108 @@
    "alto": 161
   }
  },
+ "cultivos": {
+  "MAIZ_01": {
+   "nombre": "Maíz Grano",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 7,
+   "semanas_con_falta_agua_tipico": 6,
+   "semanas_del_ciclo": 17,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 35.0,
+   "medir_con": "tmax"
+  },
+  "PEPI_02": {
+   "nombre": "Pepino",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 6,
+   "semanas_con_falta_agua_tipico": 4,
+   "semanas_del_ciclo": 10,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 38.0,
+   "medir_con": "tmedia"
+  },
+  "TOMA_03": {
+   "nombre": "Tomate",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 6,
+   "semanas_con_falta_agua_tipico": 7,
+   "semanas_del_ciclo": 16,
+   "dias_calor_danino_tipico": 4,
+   "temp_dano_c": 32.0,
+   "medir_con": "tmax"
+  },
+  "SOYA_04": {
+   "nombre": "Soya",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 7,
+   "semanas_con_falta_agua_tipico": 6,
+   "semanas_del_ciclo": 15,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 35.0,
+   "medir_con": "tmax"
+  },
+  "HENE_05": {
+   "nombre": "Henequén",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 0,
+   "semanas_con_falta_agua_tipico": 23,
+   "semanas_del_ciclo": 52,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 40.0,
+   "medir_con": "tmedia"
+  },
+  "CALA_06": {
+   "nombre": "Calabaza Chihua",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 6,
+   "semanas_con_falta_agua_tipico": 5,
+   "semanas_del_ciclo": 14,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 38.0,
+   "medir_con": "tmedia"
+  },
+  "FRIJ_07": {
+   "nombre": "Frijol",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 6,
+   "semanas_con_falta_agua_tipico": 5,
+   "semanas_del_ciclo": 12,
+   "dias_calor_danino_tipico": 3,
+   "temp_dano_c": 32.0,
+   "medir_con": "tmax"
+  },
+  "XPEL_08": {
+   "nombre": "Xpelón",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 5,
+   "semanas_con_falta_agua_tipico": 4,
+   "semanas_del_ciclo": 11,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 30.0,
+   "medir_con": "tmin"
+  },
+  "CHIL_09": {
+   "nombre": "Chile Habanero",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 5,
+   "semanas_con_falta_agua_tipico": 8,
+   "semanas_del_ciclo": 18,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 32.0,
+   "medir_con": "tmedia"
+  },
+  "SAND_10": {
+   "nombre": "Sandía",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 5,
+   "semanas_con_falta_agua_tipico": 4,
+   "semanas_del_ciclo": 12,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 40.0,
+   "medir_con": "tmedia"
+  }
+ },
  "anios": [
   {
    "anio": 1985,

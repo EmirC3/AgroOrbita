@@ -32,5 +32,13 @@ Funciones reutilizables en `scripts/` (`rd001_inicio_lluvias.py`, `rd002_canicul
   Funciones en `scripts/tendencia.py`.
 - **Incertidumbre (`rango_8_de_10_anios`):** de los años completos 1985-2025 se quita el 10 % más bajo
   y el 10 % más alto. `bajo`-`alto` = entre qué valores cae 8 de cada 10 años; `tipico` = la mediana.
+- **Cruce con cultivos (`cultivos`, `scripts/cruce_cultivos.py`):** cada cultivo de
+  `docs/investigacion/cultivos.csv` se "siembra" el día que empiezan las lluvias de cada año
+  (el henequén, de enero a diciembre). El agua que pide = Kc × ETo, con las etapas FAO-56
+  (15 % inicial, 30 % desarrollo, 30 % media, 25 % final). La etapa delicada es la media.
+  Se reporta en cuántos años de cada 10 le faltó agua en esa etapa, las semanas típicas con
+  falta de agua y los días típicos arriba de su temperatura de daño. Ojo: en Mérida la
+  temperatura está ajustada con la estación y en los demás no, así que el calor de los otros
+  municipios probablemente sale bajo.
 - **`EVPTRNS` no se usa:** es la evapotranspiración real del modelo de NASA, en unidades de energía.
   AquaCrop necesita la evapotranspiración de referencia (ETo), que calculamos con FAO-56 (RF-003).

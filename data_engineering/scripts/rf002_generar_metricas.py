@@ -25,6 +25,7 @@ from rd001_inicio_lluvias import inicio_lluvias
 from rd002_canicula import canicula, canicula_pct, dias_calor
 from rf002_temporada import deficit_agua, humedad_semanal, lluvia_temporada
 from tendencia import tendencia
+from cruce_cultivos import leer_cultivos, resumen_cultivo
 
 DATOS = Path(__file__).resolve().parents[1]
 ANIO_INICIO, ANIO_FIN_NORMAL = 1985, 2025   # el "normal" solo usa años completos
@@ -115,6 +116,25 @@ def promedio(anios, clave):
     return round(statistics.mean(v)) if v else None
 
 
+def hacer_dia_clima(base, extra, ajuste):
+    """Regresa una función: fecha -> clima de ese día (lo que necesita el cruce de cultivos)."""
+    def dia_clima(f):
+        k = f.strftime("%Y%m%d")
+        b, x = base.get(k), extra.get(k)
+        if b is None or x is None:
+            return None
+        tmax = num(b["T2M_MAX"])
+        return {
+            "lluvia": num(b["PRECTOTCORR"]),
+            "eto": eto(tmax, num(b["T2M_MIN"]), num(x["punto_rocio_c"]), num(x["viento_2m_fao_ms"]),
+                       num(b["ALLSKY_SFC_SW_DWN"]), num(x["sol_despejado_mj_m2"]), num(x["presion_kpa"])),
+            "tmax": None if tmax is None else tmax + (ajuste[f.month - 1] if ajuste else 0),
+            "tmin": num(b["T2M_MIN"]),
+            "tmedia": num(x["temp_media_c"]),
+        }
+    return dia_clima
+
+
 def rango_8_de_10(valores):
     """Ordena los años y quita el 10 % más bajo y el 10 % más alto.
     bajo/alto = entre qué valores cae 8 de cada 10 años; tipico = el año de en medio."""
@@ -159,6 +179,11 @@ def generar(m):
     # Incertidumbre: entre qué valores cae 8 de cada 10 años
     rango = {c: rango_8_de_10([a[c] for a in normales]) for c in claves}
     rango["inicio_lluvias_dia_del_anio"] = rango_8_de_10(doy_por_anio)
+    # Cruce con cada cultivo: sembrando el día que empiezan las lluvias de cada año
+    dia_clima = hacer_dia_clima(base, extra, AJUSTE_TMAX_C.get(m["municipio"]))
+    siembras = [(a["anio"], date.fromisoformat(a["inicio_lluvias"]) if a["inicio_lluvias"] else None)
+                for a in normales]
+    cultivos = {c["cultivo_id"]: resumen_cultivo(c, siembras, dia_clima) for c in leer_cultivos()}
     for a in anios:
         a["diferencia_vs_promedio"] = {
             c: (a[c] - prom[c]) if a[c] is not None and prom[c] is not None else None
@@ -176,6 +201,7 @@ def generar(m):
         "promedio_1985_2025": prom,
         "tendencia_por_decada": tend,
         "rango_8_de_10_anios": rango,
+        "cultivos": cultivos,
         "anios": anios,
     }
     ruta = DATOS / "metrics" / f"{m['municipio']}.json"
