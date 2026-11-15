@@ -1,0 +1,79 @@
+{
+  "fuente": "NASA POWER 1985-2026 (perfil mensual por celda)",
+  "ejemplo": {
+    "es_ejemplo": true,
+    "fuente": "Datos de ejemplo para demostración. Pendiente conectar el perfil mensual de NASA POWER para este municipio.",
+    "datos": [
+      { "mes": 1, "lluvia_mm": 18, "tmax_c": 28 },
+      { "mes": 2, "lluvia_mm": 20, "tmax_c": 29 },
+      { "mes": 3, "lluvia_mm": 15, "tmax_c": 31 },
+      { "mes": 4, "lluvia_mm": 25, "tmax_c": 33 },
+      { "mes": 5, "lluvia_mm": 60, "tmax_c": 34 },
+      { "mes": 6, "lluvia_mm": 145, "tmax_c": 28 },
+      { "mes": 7, "lluvia_mm": 90, "tmax_c": 29 },
+      { "mes": 8, "lluvia_mm": 160, "tmax_c": 29 },
+      { "mes": 9, "lluvia_mm": 165, "tmax_c": 28 },
+      { "mes": 10, "lluvia_mm": 70, "tmax_c": 27 },
+      { "mes": 11, "lluvia_mm": 50, "tmax_c": 26 },
+      { "mes": 12, "lluvia_mm": 35, "tmax_c": 25 }
+    ]
+  },
+  "municipios": {
+    "Peto": [
+      { "mes": 1, "lluvia_mm": 90.97, "tmax_c": 29.75 },
+      { "mes": 2, "lluvia_mm": 28.46, "tmax_c": 31.72 },
+      { "mes": 3, "lluvia_mm": 32.03, "tmax_c": 34.07 },
+      { "mes": 4, "lluvia_mm": 42.19, "tmax_c": 35.69 },
+      { "mes": 5, "lluvia_mm": 85.59, "tmax_c": 35.87 },
+      { "mes": 6, "lluvia_mm": 182.15, "tmax_c": 32.07 },
+      { "mes": 7, "lluvia_mm": 129.55, "tmax_c": 31.29 },
+      { "mes": 8, "lluvia_mm": 164.25, "tmax_c": 31.08 },
+      { "mes": 9, "lluvia_mm": 207.88, "tmax_c": 30.12 },
+      { "mes": 10, "lluvia_mm": 148.52, "tmax_c": 29.06 },
+      { "mes": 11, "lluvia_mm": 77.62, "tmax_c": 29 },
+      { "mes": 12, "lluvia_mm": 46.21, "tmax_c": 29.34 }
+    ],
+    "Mérida": [
+      { "mes": 1, "lluvia_mm": 39.06, "tmax_c": 29.3 },
+      { "mes": 2, "lluvia_mm": 24.55, "tmax_c": 31.34 },
+      { "mes": 3, "lluvia_mm": 26.17, "tmax_c": 33.65 },
+      { "mes": 4, "lluvia_mm": 32.75, "tmax_c": 35.66 },
+      { "mes": 5, "lluvia_mm": 70.14, "tmax_c": 36.24 },
+      { "mes": 6, "lluvia_mm": 165.85, "tmax_c": 33.38 },
+      { "mes": 7, "lluvia_mm": 128.22, "tmax_c": 32.48 },
+      { "mes": 8, "lluvia_mm": 147.9, "tmax_c": 32.27 },
+      { "mes": 9, "lluvia_mm": 186.33, "tmax_c": 31.12 },
+      { "mes": 10, "lluvia_mm": 123.32, "tmax_c": 29.81 },
+      { "mes": 11, "lluvia_mm": 55.85, "tmax_c": 29.49 },
+      { "mes": 12, "lluvia_mm": 38.32, "tmax_c": 29.23 }
+    ],
+    "Motul": [
+      { "mes": 1, "lluvia_mm": 39.06, "tmax_c": 29.3 },
+      { "mes": 2, "lluvia_mm": 24.55, "tmax_c": 31.34 },
+      { "mes": 3, "lluvia_mm": 26.17, "tmax_c": 33.65 },
+      { "mes": 4, "lluvia_mm": 32.75, "tmax_c": 35.66 },
+      { "mes": 5, "lluvia_mm": 70.14, "tmax_c": 36.24 },
+      { "mes": 6, "lluvia_mm": 165.85, "tmax_c": 33.38 },
+      { "mes": 7, "lluvia_mm": 128.22, "tmax_c": 32.48 },
+      { "mes": 8, "lluvia_mm": 147.9, "tmax_c": 32.27 },
+      { "mes": 9, "lluvia_mm": 186.33, "tmax_c": 31.12 },
+      { "mes": 10, "lluvia_mm": 123.32, "tmax_c": 29.81 },
+      { "mes": 11, "lluvia_mm": 55.85, "tmax_c": 29.49 },
+      { "mes": 12, "lluvia_mm": 38.32, "tmax_c": 29.23 }
+    ],
+    "Umán": [
+      { "mes": 1, "lluvia_mm": 34.23, "tmax_c": 27.92 },
+      { "mes": 2, "lluvia_mm": 22.6, "tmax_c": 29.63 },
+      { "mes": 3, "lluvia_mm": 24.66, "tmax_c": 31.57 },
+      { "mes": 4, "lluvia_mm": 28.29, "tmax_c": 33.5 },
+      { "mes": 5, "lluvia_mm": 62.47, "tmax_c": 34.19 },
+      { "mes": 6, "lluvia_mm": 149.14, "tmax_c": 32.3 },
+      { "mes": 7, "lluvia_mm": 108.17, "tmax_c": 31.8 },
+      { "mes": 8, "lluvia_mm": 127.99, "tmax_c": 31.8 },
+      { "mes": 9, "lluvia_mm": 159.11, "tmax_c": 30.92 },
+      { "mes": 10, "lluvia_mm": 113.61, "tmax_c": 29.68 },
+      { "mes": 11, "lluvia_mm": 49.84, "tmax_c": 28.83 },
+      { "mes": 12, "lluvia_mm": 36.82, "tmax_c": 28.14 }
+    ]
+  }
+}
