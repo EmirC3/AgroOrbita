@@ -9,5 +9,5 @@ FRIJ_07,Frijol,Anual/Temporal,90,0.40,1.05,0.35,18.0,30.0,350,32,tmax,floración
 XPEL_08,Xpelón,Anual/Temporal,80,0.40,1.05,0.35,20.0,32.0,320,30,tmin,botón floral,"Luo 2011, Climatic Change 109:583-598, sec. 3.2, caupí (Hall 1992); calor de noche"
 CHIL_09,Chile Habanero,Anual/Hortaliza,130,0.60,1.05,0.90,20.0,32.0,600,32,tmedia,floración y cuajado,"FAO ECOCROP Capsicum chinense, máxima absoluta"
 SAND_10,Sandía,Anual/Hortaliza,85,0.40,1.00,0.75,22.0,35.0,420,40,tmedia,floración,"FAO ECOCROP Citrullus lanatus, máxima absoluta"
-JICA_11,Jícama,Anual/Tuberculo,150,0.35,1.05,0.60,20.0,32.0,600,,,,
-MELO_12,Melón,Anual/Hortaliza,80,0.50,1.05,0.75,22.0,35.0,400,,,,
+JICA_11,Jícama,Anual/Tuberculo,150,0.35,1.05,0.60,20.0,32.0,600,36,tmedia,llenado del tubérculo,"FAO ECOCROP Pachyrhizus erosus, máxima absoluta"
+MELO_12,Melón,Anual/Hortaliza,80,0.50,1.05,0.75,22.0,35.0,400,35,tmedia,floración y cuajado,"FAO ECOCROP Cucumis melo, máxima absoluta"
