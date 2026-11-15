@@ -1,5 +1,10 @@
 {
-  "97880": { "municipio": "Oxkutzcab", "lat": 20.303, "lon": -89.418, "suelo": "K'ankab (Suelo rojo fértil)" },
-  "97930": { "municipio": "Peto", "lat": 20.125, "lon": -88.921, "suelo": "K'ankab / Ts'ek'el" },
-  "97430": { "municipio": "Motul", "lat": 21.095, "lon": -89.150, "suelo": "Ts'ek'el (Suelo pedregoso)" }
+  "97880": { "municipio": "Oxkutzcab", "zona": "Zona Puuc" },
+  "97930": { "municipio": "Peto", "zona": "Zona Sur" },
+  "97000": { "municipio": "Mérida", "zona": "Zona Centro" },
+  "97740": { "municipio": "Motul", "zona": "Zona Henequenera" },
+  "97700": { "municipio": "Tizimín", "zona": "Zona Oriente" },
+  "97860": { "municipio": "Tekax", "zona": "Zona Sur" },
+  "97800": { "municipio": "Ticul", "zona": "Zona Sur" },
+  "97390": { "municipio": "Umán", "zona": "Zona Poniente" }
 }
