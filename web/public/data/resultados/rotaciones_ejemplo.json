@@ -1,0 +1,107 @@
+{
+  "formato_version": "0.1",
+  "municipio": "ejemplo",
+  "fuente": "ejemplo",
+  "es_ejemplo": true,
+  "rotaciones": [
+    {
+      "id": "maiz_maiz",
+      "nombre": "Maíz, maíz, maíz",
+      "secuencia": [
+        "maiz",
+        "maiz",
+        "maiz"
+      ],
+      "agua_usada_mm": 600,
+      "meses_suelo_desnudo": 6,
+      "aporte_suelo": "bajo",
+      "puntaje": {
+        "agua": 4,
+        "ingreso": 6,
+        "suelo": 2
+      },
+      "por_que": "Ejemplo.",
+      "evidencia": [
+        {
+          "texto": "Ejemplo.",
+          "fuente": "ejemplo"
+        }
+      ],
+      "beneficios": [
+        "Ejemplo."
+      ],
+      "riesgos": [
+        "Ejemplo."
+      ],
+      "vacios_informacion": [
+        "Ejemplo."
+      ]
+    },
+    {
+      "id": "maiz_frijol",
+      "nombre": "Maíz, frijol, maíz",
+      "secuencia": [
+        "maiz",
+        "frijol",
+        "maiz"
+      ],
+      "agua_usada_mm": 540,
+      "meses_suelo_desnudo": 4,
+      "aporte_suelo": "medio",
+      "puntaje": {
+        "agua": 7,
+        "ingreso": 6,
+        "suelo": 7
+      },
+      "por_que": "Ejemplo.",
+      "evidencia": [
+        {
+          "texto": "Ejemplo.",
+          "fuente": "ejemplo"
+        }
+      ],
+      "beneficios": [
+        "Ejemplo."
+      ],
+      "riesgos": [
+        "Ejemplo."
+      ],
+      "vacios_informacion": [
+        "Ejemplo."
+      ]
+    },
+    {
+      "id": "frijol_maiz",
+      "nombre": "Frijol, maíz, frijol",
+      "secuencia": [
+        "frijol",
+        "maiz",
+        "frijol"
+      ],
+      "agua_usada_mm": 510,
+      "meses_suelo_desnudo": 3,
+      "aporte_suelo": "alto",
+      "puntaje": {
+        "agua": 8,
+        "ingreso": 5,
+        "suelo": 8
+      },
+      "por_que": "Ejemplo.",
+      "evidencia": [
+        {
+          "texto": "Ejemplo.",
+          "fuente": "ejemplo"
+        }
+      ],
+      "beneficios": [
+        "Ejemplo."
+      ],
+      "riesgos": [
+        "Ejemplo."
+      ],
+      "vacios_informacion": [
+        "Ejemplo."
+      ]
+    }
+  ]
+}

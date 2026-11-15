@@ -1,0 +1,16 @@
+{
+  "formato_version": "0.1",
+  "fuente": "ejemplo",
+  "es_ejemplo": true,
+  "suelos": [
+    {
+      "municipio": "ejemplo",
+      "arcilla_pct": 28,
+      "arena_pct": 35,
+      "limo_pct": 37,
+      "textura": "franco arcilloso",
+      "tipo_aquacrop": "ClayLoam",
+      "fuente": "ejemplo"
+    }
+  ]
+}

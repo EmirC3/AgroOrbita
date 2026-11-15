@@ -1,0 +1,36 @@
+{
+  "formato_version": "0.1",
+  "nota": "Piloto confirmado por el equipo el 14/11/2026. Coordenadas aproximadas de la cabecera municipal.",
+  "municipios": [
+    {
+      "municipio": "merida",
+      "nombre": "Mérida",
+      "lat": 20.97,
+      "lon": -89.62
+    },
+    {
+      "municipio": "tizimin",
+      "nombre": "Tizimín",
+      "lat": 21.14,
+      "lon": -88.15
+    },
+    {
+      "municipio": "valladolid",
+      "nombre": "Valladolid",
+      "lat": 20.69,
+      "lon": -88.2
+    },
+    {
+      "municipio": "tekax",
+      "nombre": "Tekax",
+      "lat": 20.2,
+      "lon": -89.29
+    },
+    {
+      "municipio": "oxkutzcab",
+      "nombre": "Oxkutzcab",
+      "lat": 20.3,
+      "lon": -89.42
+    }
+  ]
+}
