@@ -88,7 +88,7 @@ export default function OnboardingPage() {
             <Button 
               fullWidth 
               disabled={!isValidCP}
-              href="/dashboard"
+              href={`/dashboard?cp=${encodeURIComponent(cp)}`}
             >
               Ir al Dashboard &rarr;
             </Button>
@@ -117,7 +117,7 @@ export default function OnboardingPage() {
           </p>
           <div className="flex items-center justify-between text-[11px] text-gray-400 border-t border-white/20 pt-6 uppercase tracking-wider">
             <div className="flex items-center gap-2">
-              <span>© 2026 Agrorbita</span>
+              <span>© 2026 RotaMaya</span>
             </div>
             <div className="flex gap-6">
               <span className="hover:text-white cursor-pointer transition-colors">Términos</span>

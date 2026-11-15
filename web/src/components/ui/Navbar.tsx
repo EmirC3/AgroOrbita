@@ -9,13 +9,14 @@ export function Navbar() {
       <Link href="/" className="flex items-center gap-2">
         <div className="w-8 h-8 bg-[#2E7D32] rounded-full flex items-center justify-center">
           <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            {/* Ícono de hoja/planta simplificado usando SVG nativo */}
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            {/* Rotación + hoja: identidad de RotaMaya */}
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 11a8 8 0 10-2.34 5.66M20 4v7h-7" />
+            <path fill="currentColor" stroke="none" d="M12 16c0-2.5 1.5-4.2 4-4.2 0 2.5-1.5 4.2-4 4.2z" />
           </svg>
         </div>
         <div>
-          <h1 className="text-lg font-bold text-gray-900 leading-tight tracking-tight">Agrorbita</h1>
-          <p className="text-[10px] text-[#2E7D32] font-semibold tracking-wide">Milpa Inteligente</p>
+          <h1 className="text-lg font-bold text-gray-900 leading-tight tracking-tight">RotaMaya</h1>
+          <p className="text-sm font-semibold tracking-wide text-[#2E7D32]">Milpa Inteligente</p>
         </div>
       </Link>
 
