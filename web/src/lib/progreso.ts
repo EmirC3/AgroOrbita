@@ -1,6 +1,7 @@
 // Progreso del juego (XP, racha, riego de la mascota) guardado en este navegador.
 // Es solo para la parte de juego: las métricas climáticas vienen siempre de los datos reales.
 import { useSyncExternalStore } from 'react';
+import type { Suelo } from './riego';
 
 export interface Progreso {
   xp: number;
@@ -9,6 +10,7 @@ export interface Progreso {
   ultimoRiego: string | null;
   misionDia: string | null; // día en que se completó la misión diaria
   cultivos: Record<string, number>; // mejor salud lograda por cultivo
+  suelo: Suelo | null; // cómo es la tierra del agricultor (para el riego)
 }
 
 const CLAVE = 'rotamaya_progreso_v1';
@@ -19,6 +21,7 @@ const INICIAL: Progreso = {
   ultimoRiego: null,
   misionDia: null,
   cultivos: {},
+  suelo: null,
 };
 
 export const XP_RIEGO = 10;
@@ -118,6 +121,10 @@ export function registrarSimulacion(cultivoId: string, salud: number, xpBase: nu
     cultivos: { ...p.cultivos, [cultivoId]: Math.max(p.cultivos[cultivoId] ?? 0, salud) },
   });
   return ganado;
+}
+
+export function guardarSuelo(suelo: Suelo) {
+  guardar({ ...leer(), suelo });
 }
 
 /** Agua de la mascota (0-100): baja cada día que no la riegas. */

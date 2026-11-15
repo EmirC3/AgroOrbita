@@ -23,8 +23,13 @@ TABLA = Path(__file__).resolve().parents[2] / "docs" / "investigacion" / "cultiv
 
 
 def leer_cultivos():
+    """Solo los cultivos completos: sin temp_dano_c / medir_con no se puede medir el calor."""
     with open(TABLA, encoding="utf-8-sig") as f:
-        return list(csv.DictReader(f))
+        filas = list(csv.DictReader(f))
+    for c in filas:
+        if not (c["temp_dano_c"] and c["medir_con"]):
+            print(f"Aviso: {c['cultivo_id']} sin temp_dano_c/medir_con en cultivos.csv; se omite")
+    return [c for c in filas if c["temp_dano_c"] and c["medir_con"]]
 
 
 def kc_del_dia(dia, ciclo, kc_ini, kc_med, kc_fin):

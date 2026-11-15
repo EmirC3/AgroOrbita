@@ -473,6 +473,88 @@
      "dias_calor_danino_tipico": 0
     }
    ]
+  },
+  "JICA_11": {
+   "nombre": "Jícama",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 2,
+   "anios_con_falta_agua_final_de_cada_10": 1,
+   "semanas_con_falta_agua_tipico": 7,
+   "semanas_del_ciclo": 21,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 36.0,
+   "medir_con": "tmedia",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 4,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 8,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 2,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 2,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 2,
+     "anios_con_falta_agua_final_de_cada_10": 5,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
+  },
+  "MELO_12": {
+   "nombre": "Melón",
+   "anios_revisados": 41,
+   "anios_con_falta_agua_de_cada_10": 5,
+   "anios_con_falta_agua_final_de_cada_10": 2,
+   "semanas_con_falta_agua_tipico": 4,
+   "semanas_del_ciclo": 11,
+   "dias_calor_danino_tipico": 0,
+   "temp_dano_c": 35.0,
+   "medir_con": "tmedia",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 4,
+     "semanas_con_falta_agua_tipico": 6,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
   }
  },
  "rotaciones": [
