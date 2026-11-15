@@ -12,7 +12,8 @@ import {
   type OpcionSiembra,
   type Rotacion,
 } from '@/lib/metricas-tipos';
-import { registrarSimulacion, useProgreso } from '@/lib/progreso';
+import { guardarSuelo, registrarSimulacion, useProgreso } from '@/lib/progreso';
+import { planRiego, SUELOS, type PlanRiego, type Suelo } from '@/lib/riego';
 
 type Fase = 'elegir' | 'fecha' | 'creciendo' | 'resultado';
 
@@ -90,6 +91,13 @@ function consejoRiego(cultivo: CultivoMetrica, e: Evaluacion, diaSiembra: number
   };
 }
 
+function textoPlan(plan: PlanRiego): string {
+  const cada = plan.cadaDias === 1 ? 'cada día' : `cada ${plan.cadaDias} días`;
+  return plan.dividir
+    ? `${plan.mmPorRiego} litros por metro cuadrado ${cada}, en dos partes (mañana y tarde)`
+    : `${plan.mmPorRiego} litros por metro cuadrado ${cada}`;
+}
+
 const ESTILO_RIEGO = {
   alto: 'border-red-200 bg-red-50',
   medio: 'border-amber-200 bg-amber-50',
@@ -113,6 +121,8 @@ export function Simulador({ municipio, inicioLluviasDia, cultivos, rotaciones, c
   const totalSemanas = cultivo?.semanas_del_ciclo ?? 1;
   const perenne = cultivo ? !cultivo.si_siembras : false;
   const diaSiembra = inicioLluviasDia + corrimiento;
+  const suelo = progreso.suelo;
+  const plan = cultivoId && suelo ? planRiego(cultivoId, suelo) : null;
 
   // Animación de la temporada: avanza semana por semana y al final da el resultado.
   useEffect(() => {
@@ -253,12 +263,38 @@ export function Simulador({ municipio, inicioLluviasDia, cultivos, rotaciones, c
               </div>
             </>
           )}
+          <fieldset className="mt-6">
+            <legend className="font-bold text-gray-900">¿Cómo es tu tierra?</legend>
+            <div className="mt-2 grid gap-3 sm:grid-cols-2" role="radiogroup" aria-label="Tipo de tierra">
+              {(Object.keys(SUELOS) as Suelo[]).map((id) => {
+                const activo = suelo === id;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    role="radio"
+                    aria-checked={activo}
+                    onClick={() => guardarSuelo(id)}
+                    className={`rounded-2xl border-2 border-b-4 p-4 text-left transition-colors ${
+                      activo ? 'border-[#58CC02] bg-[#F1FBE8]' : 'border-gray-200 bg-white hover:border-gray-300'
+                    }`}
+                  >
+                    <span className="block font-bold text-gray-900">
+                      <span aria-hidden="true">{id === 'kankab' ? '🟫' : '🪨'}</span> {SUELOS[id].nombre}
+                    </span>
+                    <span className="block text-sm text-gray-600">{SUELOS[id].descripcion}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </fieldset>
           <button
             type="button"
             onClick={sembrar}
-            className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-2xl border-b-4 border-[#46A302] bg-[#58CC02] text-lg font-extrabold uppercase tracking-wide text-white transition-transform active:translate-y-0.5 active:border-b-2"
+            disabled={!suelo}
+            className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-2xl border-b-4 border-[#46A302] bg-[#58CC02] text-lg font-extrabold uppercase tracking-wide text-white transition-transform active:translate-y-0.5 active:border-b-2 disabled:border-gray-300 disabled:bg-gray-300"
           >
-            🌱 ¡Sembrar!
+            {suelo ? '🌱 ¡Sembrar!' : 'Elige tu tierra para sembrar'}
           </button>
         </section>
       ) : null}
@@ -294,6 +330,7 @@ export function Simulador({ municipio, inicioLluviasDia, cultivos, rotaciones, c
                     <p className="aparecer rounded-xl bg-white/80 px-3 py-2 text-sm text-gray-800">
                       💧 <strong>{consejoRiego(cultivo, evaluacion, diaSiembra).titulo}.</strong> Al florecer le faltó agua{' '}
                       {evaluacion.aniosFalta} de cada 10 años.
+                      {plan ? ` Si no llueve: ${textoPlan(plan)}.` : ''}
                     </p>
                     <p className="aparecer rounded-xl bg-white/80 px-3 py-2 text-sm text-gray-800">
                       🔥{' '}
@@ -323,6 +360,8 @@ export function Simulador({ municipio, inicioLluviasDia, cultivos, rotaciones, c
               mejorSalud={mejorSalud}
               xpGanado={xpGanado}
               inicioLluviasDia={inicioLluviasDia}
+              plan={plan}
+              suelo={suelo}
               rotaciones={rotaciones.filter((r) => r.cultivos.includes(cultivoId) && r.id !== 'maiz_solo')}
               onOtraFecha={() => setFase('fecha')}
               onOtroCultivo={() => setFase('elegir')}
@@ -343,6 +382,8 @@ interface ResultadoProps {
   mejorSalud: number;
   xpGanado: number;
   inicioLluviasDia: number;
+  plan: PlanRiego | null;
+  suelo: Suelo | null;
   rotaciones: Rotacion[];
   onOtraFecha: () => void;
   onOtroCultivo: () => void;
@@ -357,6 +398,8 @@ function Resultado({
   mejorSalud,
   xpGanado,
   inicioLluviasDia,
+  plan,
+  suelo,
   rotaciones,
   onOtraFecha,
   onOtroCultivo,
@@ -389,8 +432,27 @@ function Resultado({
             <p className="text-xs font-bold uppercase tracking-wide text-gray-600">💧 Riego</p>
             <h3 className="mt-1 text-lg font-bold text-gray-900">{riego.titulo}</h3>
             <p className="mt-1 text-sm leading-relaxed text-gray-800">{riego.texto}</p>
+            {plan && suelo ? (
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <div className="rounded-2xl bg-white/80 p-3">
+                  <p className="text-xs font-semibold text-gray-600">Cuánta agua</p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {plan.mmPorRiego} L<span className="text-sm font-semibold text-gray-600"> por m²</span>
+                  </p>
+                  <p className="text-xs text-gray-600">{plan.dividir ? 'en dos partes: mañana y tarde' : 'en cada riego'}</p>
+                </div>
+                <div className="rounded-2xl bg-white/80 p-3">
+                  <p className="text-xs font-semibold text-gray-600">Cada cuánto</p>
+                  <p className="text-2xl font-bold text-gray-900">{plan.cadaDias === 1 ? 'Diario' : `${plan.cadaDias} días`}</p>
+                  <p className="text-xs text-gray-600">{plan.mmPorSemana} L por m² a la semana</p>
+                </div>
+              </div>
+            ) : null}
             <p className="mt-2 text-xs text-gray-600">
-              Basado en 41 años de clima, no en un pronóstico. Cuánta agua y cada cuántos días depende de tu suelo: revisa la tierra antes de regar.
+              {plan && suelo
+                ? `Para tierra ${SUELOS[suelo].nombre.toLowerCase()}, en floración y sin lluvia. Si llovió, réstale lo que cayó. Con manguera o cubeta se desperdicia agua: pon un poco más. `
+                : ''}
+              Basado en 41 años de clima y FAO-56, no en un pronóstico.
             </p>
           </div>
         );
