@@ -26,6 +26,7 @@ from rd002_canicula import canicula, canicula_pct, dias_calor
 from rf002_temporada import deficit_agua, humedad_semanal, lluvia_temporada
 from tendencia import tendencia
 from cruce_cultivos import leer_cultivos, opciones_siembra, resumen_cultivo
+from rotaciones import calificar_todas
 
 DATOS = Path(__file__).resolve().parents[1]
 ANIO_INICIO, ANIO_FIN_NORMAL = 1985, 2025   # el "normal" solo usa años completos
@@ -207,6 +208,7 @@ def generar(m):
         "tendencia_por_decada": tend,
         "rango_8_de_10_anios": rango,
         "cultivos": cultivos,
+        "rotaciones": calificar_todas(cultivos),
         "anios": anios,
     }
     ruta = DATOS / "metrics" / f"{m['municipio']}.json"

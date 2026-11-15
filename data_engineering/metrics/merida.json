@@ -475,6 +475,90 @@
    ]
   }
  },
+ "rotaciones": [
+  {
+   "id": "maiz_solo",
+   "nombre": "Maíz solo cada año (para comparar)",
+   "cultivos": [
+    "MAIZ_01"
+   ],
+   "anios_con_falta_agua_de_cada_10": 7.0,
+   "dias_calor_danino_tipico": 17,
+   "puntos_suelo": 0,
+   "suelo": {
+    "nitrogeno": false,
+    "cubre_suelo": false,
+    "corta_plagas": false
+   }
+  },
+  {
+   "id": "A_milpa",
+   "nombre": "Milpa: maíz + frijol + calabaza",
+   "cultivos": [
+    "MAIZ_01",
+    "FRIJ_07",
+    "CALA_06"
+   ],
+   "anios_con_falta_agua_de_cada_10": 7.0,
+   "dias_calor_danino_tipico": 15,
+   "puntos_suelo": 3,
+   "suelo": {
+    "nitrogeno": true,
+    "cubre_suelo": true,
+    "corta_plagas": true
+   }
+  },
+  {
+   "id": "B_abono_verde",
+   "nombre": "Maíz y después abono verde (mucuna)",
+   "cultivos": [
+    "MAIZ_01",
+    "MUCUNA"
+   ],
+   "anios_con_falta_agua_de_cada_10": 7.0,
+   "dias_calor_danino_tipico": 17,
+   "puntos_suelo": 3,
+   "suelo": {
+    "nitrogeno": true,
+    "cubre_suelo": true,
+    "corta_plagas": true
+   }
+  },
+  {
+   "id": "C_hortalizas",
+   "nombre": "Hortalizas: chile habanero, pepino y xpelón",
+   "cultivos": [
+    "CHIL_09",
+    "PEPI_02",
+    "XPEL_08"
+   ],
+   "anios_con_falta_agua_de_cada_10": 5.7,
+   "dias_calor_danino_tipico": 0,
+   "puntos_suelo": 2,
+   "suelo": {
+    "nitrogeno": true,
+    "cubre_suelo": false,
+    "corta_plagas": true
+   }
+  },
+  {
+   "id": "D_henequen",
+   "nombre": "Henequén con xpelón o calabaza entre las filas",
+   "cultivos": [
+    "HENE_05",
+    "XPEL_08",
+    "CALA_06"
+   ],
+   "anios_con_falta_agua_de_cada_10": 4.3,
+   "dias_calor_danino_tipico": 0,
+   "puntos_suelo": 3,
+   "suelo": {
+    "nitrogeno": true,
+    "cubre_suelo": true,
+    "corta_plagas": true
+   }
+  }
+ ],
  "anios": [
   {
    "anio": 1985,

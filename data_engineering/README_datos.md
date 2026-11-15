@@ -42,5 +42,9 @@ Funciones reutilizables en `scripts/` (`rd001_inicio_lluvias.py`, `rd002_canicul
   municipios probablemente sale bajo.
   `si_siembras` repite el cálculo sembrando 2 semanas antes, en la fecha típica, y 2 y 4 semanas
   después del inicio de lluvias, para que el agricultor mueva la fecha en la página.
+- **Rotaciones (`rotaciones`, `scripts/rotaciones.py`):** las 4 de `docs/investigacion/rotaciones.md`
+  más "maíz solo" para comparar. Agua y calor = promedio de sus cultivos. Suelo de 0 a 3 puntos:
+  le da nitrógeno (leguminosa), cubre el suelo (calabaza, mucuna o henequén) y corta plagas
+  (familias distintas).
 - **`EVPTRNS` no se usa:** es la evapotranspiración real del modelo de NASA, en unidades de energía.
   AquaCrop necesita la evapotranspiración de referencia (ETo), que calculamos con FAO-56 (RF-003).
