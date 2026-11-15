@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Button } from '@/components/ui/Button';
@@ -36,7 +37,7 @@ function SinParcela({ cp }: { cp?: string }) {
       <p className="mt-2 text-base text-gray-600">
         {cp
           ? `No reconocemos el código postal ${cp}. Revisa que sea de Yucatán y que exista en el catálogo.`
-          : 'Necesitamos tu código postal para mostrar el clima y el suelo de tu municipio.'}
+          : 'No encontramos tu código postal guardado. Ingresa tu CP para ver el clima y el suelo de tu municipio.'}
       </p>
       <Button href="/" fullWidth className="mt-6">
         Ingresar mi código postal
@@ -62,11 +63,15 @@ function DashboardFallback() {
 
 async function DashboardContent({ searchParams }: DashboardPageProps) {
   const params = await searchParams;
-  const cp = Array.isArray(params.cp) ? params.cp[0] : params.cp;
+  const cookieStore = await cookies();
+  const cpParam = Array.isArray(params.cp) ? params.cp[0] : params.cp;
+  const cpCookie = cookieStore.get('rotamaya_cp')?.value;
+  const cpValido = cpParam && catalogo[cpParam] ? cpParam : undefined;
+  const cp = cpValido ?? cpCookie;
   const ubicacion = cp ? catalogo[cp] : undefined;
 
   if (!cp || !ubicacion) {
-    return <SinParcela cp={cp} />;
+    return <SinParcela cp={cpParam ?? cpCookie} />;
   }
 
   const municipioData: MunicipioDiagnostico | undefined =
