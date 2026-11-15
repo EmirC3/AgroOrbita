@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Agrorbita | Milpa Inteligente',
+  title: 'RotaMaya | Milpa Inteligente',
   description: 'Tecnología que transforma el campo yucateco',
 };
 

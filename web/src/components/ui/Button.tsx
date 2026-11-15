@@ -13,9 +13,10 @@ export function Button({
   href, 
   fullWidth, 
   className = '', 
+  disabled,
   ...props 
 }: ButtonProps) {
-  const baseStyles = "inline-flex items-center justify-center rounded-xl font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2";
+  const baseStyles = "inline-flex items-center justify-center rounded-xl font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50";
   
   const variants = {
     primary: "bg-[#2E7D32] text-white hover:bg-[#1B5E20] focus:ring-[#2E7D32] h-14 px-6 text-lg",
@@ -25,7 +26,7 @@ export function Button({
 
   const classes = `${baseStyles} ${variants[variant]} ${fullWidth ? 'w-full' : ''} ${className}`;
 
-  if (href) {
+  if (href && !disabled) {
     return (
       <Link href={href} className={classes}>
         {children}
@@ -34,7 +35,7 @@ export function Button({
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} disabled={disabled} {...props}>
       {children}
     </button>
   );

@@ -15,10 +15,18 @@ export async function GET(request: Request) {
   }
 
   // 1. Obtener datos de ubicación
-  const ubicacion = cpYucatan[cp as keyof typeof cpYucatan];
-  
-  // 2. Obtener datos históricos de tu consolidado
-  const historico = climaHistorico[ubicacion.municipio as keyof typeof climaHistorico];
+  const ubicacion = cpYucatan[cp as keyof typeof cpYucatan] as {
+    municipio: string;
+    zona: string;
+  };
+
+  // 2. Obtener datos históricos (puede no existir para todos los municipios)
+  const historico = (
+    climaHistorico as Record<
+      string,
+      { tmax_prom: number; dias_calor_35: number; lluvia_anual_mm: number; gwetroot_prom: number }
+    >
+  )[ubicacion.municipio];
 
   // 3. Simular la consulta del día a la NASA (En producción, aquí leerías de clima_hoy.json)
   // Para el hackathon, enviamos un dato calibrado creíble basado en su histórico
@@ -33,16 +41,17 @@ export async function GET(request: Request) {
     parcela: {
       cp: cp,
       municipio: ubicacion.municipio,
-      coordenadas: { lat: ubicacion.lat, lon: ubicacion.lon },
-      tipo_suelo: ubicacion.suelo
+      zona: ubicacion.zona
     },
     nasa_hoy: climaHoy,
-    simulador_riesgo: {
-      dias_calor_extremo: historico.dias_calor_35,
-      lluvia_esperada_mm: historico.lluvia_anual_mm,
-      nivel_riesgo_monocultivo: "Alto",
-      nivel_riesgo_rotacion: "Bajo"
-    }
+    simulador_riesgo: historico
+      ? {
+          dias_calor_extremo: historico.dias_calor_35,
+          lluvia_esperada_mm: historico.lluvia_anual_mm,
+          nivel_riesgo_monocultivo: "Alto",
+          nivel_riesgo_rotacion: "Bajo"
+        }
+      : null
   };
 
   return NextResponse.json(payload);

@@ -1,0 +1,145 @@
+{
+  "formato_version": "0.1",
+  "fuente_clima": "NASA POWER (promedios 1985-2026)",
+  "nota": "Datos climáticos de NASA POWER (promedios 1985-2026) y del consolidado clima_historico.json. El suelo por municipio todavía no tiene un análisis verificado; las recomendaciones son agroecológicas generales del proyecto y no un diagnóstico de laboratorio.",
+  "contexto_suelo": {
+    "estado": "Aún no hay análisis de textura y nutrientes verificado por municipio. La fuente prevista es SoilGrids.",
+    "suelos_predominantes": ["K'ankab", "Tzek'el", "Luvisoles"],
+    "fuente": "docs/investigacion/fuentes.md"
+  },
+  "recomendaciones_suelo": [
+    {
+      "titulo": "Milpa: maíz, frijol y calabaza",
+      "detalle": "El frijol o el xpelón fijan nitrógeno, la calabaza cubre el suelo y reduce la evaporación, y el maíz sirve de guía. Es la asociación tradicional de Yucatán.",
+      "fuente": "docs/investigacion/rotaciones.md"
+    },
+    {
+      "titulo": "Abonos verdes después del maíz",
+      "detalle": "Sembrar mucuna o frijol terciopelo al cerrar el temporal e incorporarlo como biomasa ayuda a recuperar materia orgánica y nutrientes del suelo k'ankab.",
+      "fuente": "docs/investigacion/rotaciones.md"
+    },
+    {
+      "titulo": "Rotar para no agotar la tierra",
+      "detalle": "Alternar maíz con leguminosas o cucurbitáceas de ciclo corto evita el agotamiento de nutrientes y corta los ciclos de plagas del suelo.",
+      "fuente": "docs/investigacion/rotaciones.md"
+    }
+  ],
+  "municipios": {
+    "Oxkutzcab": {
+      "zona": "Zona Puuc",
+      "clima": {
+        "tmax_prom_c": 34.2,
+        "tmin_prom_c": null,
+        "dias_calor_35": 95,
+        "lluvia_anual_mm": 1050,
+        "lluvia_may_oct_mm": null,
+        "gwetroot_prom": 0.65,
+        "fuente": "clima_historico.json"
+      },
+      "suelo": null,
+      "canicula_dias": null,
+      "limitaciones": [
+        "El tipo de suelo y los días de canícula aún no están verificados para este municipio.",
+        "La temperatura mínima y la lluvia de mayo a octubre no están disponibles en el consolidado actual."
+      ]
+    },
+    "Peto": {
+      "zona": "Zona Sur",
+      "clima": {
+        "tmax_prom_c": 31.59,
+        "tmin_prom_c": 21.74,
+        "dias_calor_35": 66.9,
+        "lluvia_anual_mm": 1234,
+        "lluvia_may_oct_mm": 914,
+        "gwetroot_prom": 0.7,
+        "fuente": "NASA POWER 1985-2026"
+      },
+      "suelo": null,
+      "canicula_dias": null,
+      "limitaciones": [
+        "El tipo de suelo y los días de canícula aún no están verificados para este municipio."
+      ]
+    },
+    "Mérida": {
+      "zona": "Zona Centro",
+      "clima": {
+        "tmax_prom_c": 32.01,
+        "tmin_prom_c": 22.16,
+        "dias_calor_35": 75.3,
+        "lluvia_anual_mm": 1037,
+        "lluvia_may_oct_mm": 819,
+        "gwetroot_prom": 0.6,
+        "fuente": "NASA POWER 1985-2026"
+      },
+      "suelo": null,
+      "canicula_dias": null,
+      "limitaciones": [
+        "El tipo de suelo y los días de canícula aún no están verificados para este municipio."
+      ]
+    },
+    "Motul": {
+      "zona": "Zona Henequenera",
+      "clima": {
+        "tmax_prom_c": 32.01,
+        "tmin_prom_c": 22.16,
+        "dias_calor_35": 75.3,
+        "lluvia_anual_mm": 1037,
+        "lluvia_may_oct_mm": 819,
+        "gwetroot_prom": 0.6,
+        "fuente": "NASA POWER 1985-2026"
+      },
+      "suelo": null,
+      "canicula_dias": null,
+      "limitaciones": [
+        "El tipo de suelo y los días de canícula aún no están verificados para este municipio."
+      ]
+    },
+    "Umán": {
+      "zona": "Zona Poniente",
+      "clima": {
+        "tmax_prom_c": 30.87,
+        "tmin_prom_c": 23.23,
+        "dias_calor_35": 30.8,
+        "lluvia_anual_mm": 915,
+        "lluvia_may_oct_mm": 718,
+        "gwetroot_prom": 0.56,
+        "fuente": "NASA POWER 1985-2026"
+      },
+      "suelo": null,
+      "canicula_dias": null,
+      "limitaciones": [
+        "El tipo de suelo y los días de canícula aún no están verificados para este municipio."
+      ]
+    },
+    "Tizimín": {
+      "zona": "Zona Oriente",
+      "clima": null,
+      "suelo": null,
+      "canicula_dias": null,
+      "limitaciones": [
+        "Aún no hay datos climáticos verificados para este municipio.",
+        "El tipo de suelo y los días de canícula aún no están verificados."
+      ]
+    },
+    "Tekax": {
+      "zona": "Zona Sur",
+      "clima": null,
+      "suelo": null,
+      "canicula_dias": null,
+      "limitaciones": [
+        "Aún no hay datos climáticos verificados para este municipio.",
+        "El tipo de suelo y los días de canícula aún no están verificados."
+      ]
+    },
+    "Ticul": {
+      "zona": "Zona Sur",
+      "clima": null,
+      "suelo": null,
+      "canicula_dias": null,
+      "limitaciones": [
+        "Aún no hay datos climáticos verificados para este municipio.",
+        "El tipo de suelo y los días de canícula aún no están verificados."
+      ]
+    }
+  }
+}
