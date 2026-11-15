@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Button } from '@/components/ui/Button';
 import { COOKIE_CP, COOKIE_MUNICIPIO, COOKIE_NOMBRE, lugarDesdeCP, nombreDesdeCookie } from '@/lib/metricas';
-import { evaluar, fechaDesdeDia, rankingCultivos, type MetricasMunicipio } from '@/lib/metricas-tipos';
+import { evaluar, fechaDesdeDia, rankingCultivos, type MetricasMunicipio, type TemporadaActual } from '@/lib/metricas-tipos';
 import { apariencia } from '@/lib/cultivos-juego';
 import { PanelMascota } from './components/PanelMascota';
 import { ClimaReciente } from './components/ClimaReciente';
@@ -15,6 +15,25 @@ interface DashboardPageProps {
 }
 
 /** Consejo corto y verificable sacado de las métricas reales del municipio. */
+/** Cómo va (o cómo fue) la temporada del año en curso comparada con el promedio. */
+function textosTemporadaActual(a: TemporadaActual, p: MetricasMunicipio['promedio']) {
+  const anio = a.anio;
+  let inicio = `En ${anio} todavía no empiezan las lluvias.`;
+  if (a.inicio_lluvias) {
+    const [y, mes, d] = a.inicio_lluvias.split('-').map(Number);
+    const dia = Math.round((Date.UTC(y, mes - 1, d) - Date.UTC(y, 0, 1)) / 86_400_000) + 1;
+    const dif = dia - p.inicio_lluvias_dia_del_anio;
+    const cuando = Math.abs(dif) <= 3 ? 'a tiempo' : `${Math.abs(dif)} días ${dif > 0 ? 'tarde' : 'antes'}`;
+    inicio = `En ${anio} empezaron el ${fechaDesdeDia(dia)}: ${cuando}.`;
+  }
+  const difLluvia = a.lluvia_mayo_octubre_mm - p.lluvia_mayo_octubre_mm;
+  const lluvia = a.temporada_terminada
+    ? `En ${anio} llovieron ${a.lluvia_mayo_octubre_mm} mm: ${Math.abs(difLluvia)} mm ${difLluvia >= 0 ? 'más' : 'menos'} de lo normal.`
+    : `En ${anio} van ${a.lluvia_mayo_octubre_mm} mm.`;
+  const calor = `En lo que va de ${anio}: ${a.dias_calor_mayor_35} días.`;
+  return { inicio, lluvia, calor };
+}
+
 function consejoDelLugar(m: MetricasMunicipio): string {
   const inicio = fechaDesdeDia(m.promedio.inicio_lluvias_dia_del_anio);
   const maiz = m.cultivos.MAIZ_01;
@@ -87,6 +106,8 @@ async function DashboardContent({ searchParams }: DashboardPageProps) {
     .filter((x) => x.id !== 'maiz_solo')
     .sort((a, b) => a.anios_con_falta_agua_de_cada_10 - b.anios_con_falta_agua_de_cada_10 || b.puntos_suelo - a.puntos_suelo)[0];
   const balance = p.deficit_agua_mm;
+  const actual = m.temporada_actual;
+  const comoVa = actual ? textosTemporadaActual(actual, p) : null;
 
   return (
     <>
@@ -111,7 +132,10 @@ async function DashboardContent({ searchParams }: DashboardPageProps) {
               <h2 id="clima" className="text-xl font-bold text-gray-900">
                 El clima de {m.nombre}
               </h2>
-              <p className="text-sm text-gray-600">Historia de 1985 a 2025 · temporada de lluvias (mayo a octubre)</p>
+              <p className="text-sm text-gray-600">
+                Historia de 1985 a 2025 · temporada de lluvias (mayo a octubre)
+                {actual ? ` · en azul, cómo ${actual.temporada_terminada ? 'fue' : 'va'} ${actual.anio}` : ''}
+              </p>
             </div>
             <Link href="/?editar=1" className="text-sm font-semibold text-[#2E7D32] hover:text-[#1B5E20]">
               Cambiar lugar
@@ -125,6 +149,7 @@ async function DashboardContent({ searchParams }: DashboardPageProps) {
               valor={fechaDesdeDia(p.inicio_lluvias_dia_del_anio)}
               detalle={`8 de cada 10 años, entre el ${fechaDesdeDia(r.inicio_lluvias_dia_del_anio.bajo)} y el ${fechaDesdeDia(r.inicio_lluvias_dia_del_anio.alto)}.`}
               tendencia={{ t: t.inicio_lluvias_dia_del_anio, unidad: 'días', subirEsMalo: true }}
+              esteAnio={comoVa?.inicio}
             />
             <MetricaCard
               icono="💧"
@@ -133,6 +158,7 @@ async function DashboardContent({ searchParams }: DashboardPageProps) {
               unidad="mm"
               detalle={`Año seco: ${r.lluvia_mayo_octubre_mm.bajo} mm · año lluvioso: ${r.lluvia_mayo_octubre_mm.alto} mm.`}
               tendencia={{ t: t.lluvia_mayo_octubre_mm, unidad: 'mm', subirEsMalo: false }}
+              esteAnio={comoVa?.lluvia}
             />
             <MetricaCard
               icono="🔥"
@@ -141,6 +167,7 @@ async function DashboardContent({ searchParams }: DashboardPageProps) {
               unidad="al año"
               detalle={`Entre ${r.dias_calor_mayor_35.bajo} y ${r.dias_calor_mayor_35.alto} días, según el año.`}
               tendencia={{ t: t.dias_calor_mayor_35, unidad: 'días', subirEsMalo: true }}
+              esteAnio={comoVa?.calor}
             />
             <MetricaCard
               icono="☀️"

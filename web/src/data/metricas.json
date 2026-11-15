@@ -752,7 +752,15 @@
      "dias_calor_mayor_35": 180,
      "deficit_agua_mm": 185
     }
-   ]
+   ],
+   "temporada_actual": {
+    "anio": 2026,
+    "inicio_lluvias": "2026-07-06",
+    "lluvia_mayo_octubre_mm": 942,
+    "dias_calor_mayor_35": 125,
+    "temporada_terminada": true,
+    "calculado_el": "2026-11-15"
+   }
   },
   "tizimin": {
    "slug": "tizimin",
@@ -1504,7 +1512,15 @@
      "dias_calor_mayor_35": 119,
      "deficit_agua_mm": 196
     }
-   ]
+   ],
+   "temporada_actual": {
+    "anio": 2026,
+    "inicio_lluvias": "2026-05-02",
+    "lluvia_mayo_octubre_mm": 899,
+    "dias_calor_mayor_35": 67,
+    "temporada_terminada": true,
+    "calculado_el": "2026-11-15"
+   }
   },
   "valladolid": {
    "slug": "valladolid",
@@ -2256,7 +2272,15 @@
      "dias_calor_mayor_35": 82,
      "deficit_agua_mm": -53
     }
-   ]
+   ],
+   "temporada_actual": {
+    "anio": 2026,
+    "inicio_lluvias": "2026-05-02",
+    "lluvia_mayo_octubre_mm": 982,
+    "dias_calor_mayor_35": 64,
+    "temporada_terminada": true,
+    "calculado_el": "2026-11-15"
+   }
   },
   "tekax": {
    "slug": "tekax",
@@ -3008,7 +3032,15 @@
      "dias_calor_mayor_35": 108,
      "deficit_agua_mm": 13
     }
-   ]
+   ],
+   "temporada_actual": {
+    "anio": 2026,
+    "inicio_lluvias": "2026-05-02",
+    "lluvia_mayo_octubre_mm": 973,
+    "dias_calor_mayor_35": 83,
+    "temporada_terminada": true,
+    "calculado_el": "2026-11-15"
+   }
   },
   "oxkutzcab": {
    "slug": "oxkutzcab",
@@ -3760,7 +3792,15 @@
      "dias_calor_mayor_35": 122,
      "deficit_agua_mm": 12
     }
-   ]
+   ],
+   "temporada_actual": {
+    "anio": 2026,
+    "inicio_lluvias": "2026-06-29",
+    "lluvia_mayo_octubre_mm": 973,
+    "dias_calor_mayor_35": 97,
+    "temporada_terminada": true,
+    "calculado_el": "2026-11-15"
+   }
   }
  }
 }

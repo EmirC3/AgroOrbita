@@ -4,7 +4,7 @@ import type { Tendencia } from '@/lib/metricas-tipos';
 
 function etiquetaTendencia(t: Tendencia, unidad: string, subirEsMalo: boolean) {
   if (t.seguridad_pct < 50 || t.cambio === 0) {
-    return { texto: 'Sin cambio claro en 40 años', clase: 'bg-gray-100 text-gray-600', icono: '→' };
+    return { texto: 'Sin cambio claro en 41 años', clase: 'bg-gray-100 text-gray-600', icono: '→' };
   }
   const sube = t.cambio > 0;
   const malo = sube === subirEsMalo;
@@ -23,9 +23,10 @@ interface MetricaCardProps {
   unidad?: string;
   detalle: string;
   tendencia?: { t: Tendencia; unidad: string; subirEsMalo: boolean };
+  esteAnio?: string; // cómo va el año en curso comparado con lo normal
 }
 
-export function MetricaCard({ icono, titulo, valor, unidad, detalle, tendencia }: MetricaCardProps) {
+export function MetricaCard({ icono, titulo, valor, unidad, detalle, tendencia, esteAnio }: MetricaCardProps) {
   const etiqueta = tendencia ? etiquetaTendencia(tendencia.t, tendencia.unidad, tendencia.subirEsMalo) : null;
   return (
     <div className="flex flex-col rounded-2xl border border-gray-200 bg-white p-4">
@@ -40,6 +41,7 @@ export function MetricaCard({ icono, titulo, valor, unidad, detalle, tendencia }
         {unidad ? <span className="ml-1 text-base font-semibold text-gray-500">{unidad}</span> : null}
       </p>
       <p className="mt-1 flex-1 text-sm leading-snug text-gray-600">{detalle}</p>
+      {esteAnio ? <p className="mt-2 rounded-lg bg-sky-50 px-2.5 py-1.5 text-sm font-medium text-sky-900">{esteAnio}</p> : null}
       {etiqueta ? (
         <p
           className={`mt-3 inline-flex w-fit items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold ${etiqueta.clase}`}

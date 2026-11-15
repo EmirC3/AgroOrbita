@@ -79,6 +79,16 @@ export interface MetricasMunicipio {
   cultivos: Record<string, CultivoMetrica>;
   rotaciones: Rotacion[];
   anios_recientes: AnioReciente[];
+  temporada_actual: TemporadaActual | null; // año en curso, aún no entra al promedio
+}
+
+export interface TemporadaActual {
+  anio: number;
+  inicio_lluvias: string | null; // YYYY-MM-DD
+  lluvia_mayo_octubre_mm: number;
+  dias_calor_mayor_35: number;
+  temporada_terminada: boolean;
+  calculado_el: string;
 }
 
 /** Dónde está la persona y de qué municipio salen sus métricas. */

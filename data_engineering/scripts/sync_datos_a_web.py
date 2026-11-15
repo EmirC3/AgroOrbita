@@ -8,6 +8,7 @@ Correr después de rf002_generar_metricas.py:
     python data_engineering/scripts/sync_datos_a_web.py
 """
 import json
+from datetime import date
 import shutil
 import sys
 from pathlib import Path
@@ -61,8 +62,26 @@ def resumen_metricas():
                                    "dias_calor_mayor_35", "deficit_agua_mm")}
                 for a in completos[-ANIOS_RECIENTES:]
             ],
+            "temporada_actual": temporada_actual(d.get("anios", []), completos),
         }
     return salida
+
+
+def temporada_actual(anios, completos):
+    """El año en curso (aún incompleto) si ya empezó su temporada: así la web muestra cómo va este año.
+    Sin déficit: la ETo de ese año todavía no está en raw_data."""
+    if not anios or anios[-1].get("completo") or (completos and anios[-1]["anio"] <= completos[-1]["anio"]):
+        return None
+    a = anios[-1]
+    hoy = date.today()
+    return {
+        "anio": a["anio"],
+        "inicio_lluvias": a["inicio_lluvias"],
+        "lluvia_mayo_octubre_mm": a["lluvia_mayo_octubre_mm"],
+        "dias_calor_mayor_35": a["dias_calor_mayor_35"],
+        "temporada_terminada": hoy >= date(a["anio"], 11, 1),
+        "calculado_el": hoy.isoformat(),
+    }
 
 
 DESTINO.mkdir(parents=True, exist_ok=True)

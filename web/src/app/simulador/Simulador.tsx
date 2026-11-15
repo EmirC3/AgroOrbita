@@ -190,7 +190,7 @@ export function Simulador({ municipio, inicioLluviasDia, cultivos, rotaciones, c
       {fase === 'elegir' ? (
         <section className="aparecer mt-6">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900">¿Qué quieres sembrar?</h1>
-          <p className="mt-1 text-gray-600">Simularemos tu cultivo con el clima real de {municipio} de 1985 a 2025.</p>
+          <p className="mt-1 text-gray-600">Simularemos tu cultivo con 41 años de clima real de {municipio} (1985 a 2025).</p>
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
             {Object.entries(cultivos).map(([id, c]) => {
               const a = apariencia(id);
