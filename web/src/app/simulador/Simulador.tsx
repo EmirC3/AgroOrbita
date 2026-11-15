@@ -58,6 +58,44 @@ function estrellas(salud: number, mejor: number): 1 | 2 | 3 {
   return 1;
 }
 
+/**
+ * Recomendación de riego a partir de las métricas (no es un pronóstico).
+ * La floración es del 45 % al 75 % del ciclo (FAO-56, cruce_cultivos.py).
+ */
+function consejoRiego(cultivo: CultivoMetrica, e: Evaluacion, diaSiembra: number) {
+  const perenne = !cultivo.si_siembras;
+  const dias = cultivo.semanas_del_ciclo * 7;
+  const floracion = perenne
+    ? 'en la temporada seca'
+    : `del ${fechaDesdeDia(diaSiembra + Math.round(dias * 0.45))} al ${fechaDesdeDia(diaSiembra + Math.round(dias * 0.75))}`;
+  const semanas = e.semanasFalta > 0 ? ` En un año normal, ${e.semanasFalta} de ${cultivo.semanas_del_ciclo} semanas llueve menos de lo que la planta necesita: planea riego para esas semanas.` : '';
+  if (e.aniosFalta >= 6) {
+    return {
+      nivel: 'alto' as const,
+      titulo: 'Necesitará riego casi todos los años',
+      texto: `Riega más de lo normal ${floracion}, que es cuando la planta más agua pide.${semanas}`,
+    };
+  }
+  if (e.aniosFalta >= 3) {
+    return {
+      nivel: 'medio' as const,
+      titulo: 'Ten riego de apoyo listo',
+      texto: `Algunos años la lluvia no alcanza ${floracion}. Si en esas fechas pasan varios días sin llover, riega.${semanas}`,
+    };
+  }
+  return {
+    nivel: 'bajo' as const,
+    titulo: 'La lluvia normalmente alcanza',
+    texto: `Casi todos los años no necesita riego extra. Solo vigila si no llueve ${floracion}.`,
+  };
+}
+
+const ESTILO_RIEGO = {
+  alto: 'border-red-200 bg-red-50',
+  medio: 'border-amber-200 bg-amber-50',
+  bajo: 'border-emerald-200 bg-emerald-50',
+};
+
 export function Simulador({ municipio, inicioLluviasDia, cultivos, rotaciones, cultivoInicial }: SimuladorProps) {
   const progreso = useProgreso();
   const [fase, setFase] = useState<Fase>(cultivoInicial ? 'fecha' : 'elegir');
@@ -254,7 +292,8 @@ export function Simulador({ municipio, inicioLluviasDia, cultivos, rotaciones, c
                 {enFloracion ? (
                   <>
                     <p className="aparecer rounded-xl bg-white/80 px-3 py-2 text-sm text-gray-800">
-                      💧 Le faltó agua al florecer <strong>{evaluacion.aniosFalta} de cada 10 años</strong>.
+                      💧 <strong>{consejoRiego(cultivo, evaluacion, diaSiembra).titulo}.</strong> Al florecer le faltó agua{' '}
+                      {evaluacion.aniosFalta} de cada 10 años.
                     </p>
                     <p className="aparecer rounded-xl bg-white/80 px-3 py-2 text-sm text-gray-800">
                       🔥{' '}
@@ -343,9 +382,23 @@ function Resultado({
         <p className="rebote mt-3 inline-block rounded-full bg-amber-100 px-4 py-1.5 font-bold text-amber-800">+{xpGanado} XP</p>
       </div>
 
+      {(() => {
+        const riego = consejoRiego(cultivo, evaluacion, inicioLluviasDia + corrimiento);
+        return (
+          <div className={`rounded-3xl border p-5 ${ESTILO_RIEGO[riego.nivel]}`}>
+            <p className="text-xs font-bold uppercase tracking-wide text-gray-600">💧 Riego</p>
+            <h3 className="mt-1 text-lg font-bold text-gray-900">{riego.titulo}</h3>
+            <p className="mt-1 text-sm leading-relaxed text-gray-800">{riego.texto}</p>
+            <p className="mt-2 text-xs text-gray-600">
+              Basado en 41 años de clima, no en un pronóstico. Cuánta agua y cada cuántos días depende de tu suelo: revisa la tierra antes de regar.
+            </p>
+          </div>
+        );
+      })()}
+
       <div className="rounded-3xl border border-gray-200 bg-white p-5">
         <h3 className="font-bold text-gray-900">Si lo siembras así 10 años…</h3>
-        <p className="text-sm text-gray-600">Cada maceta es un año. Las que tienen sed son años en que le faltó agua al florecer.</p>
+        <p className="text-sm text-gray-600">Cada maceta es un año. Las que tienen sed son años en que habrías tenido que regar al florecer.</p>
         <div className="mt-3 grid grid-cols-5 gap-1 sm:grid-cols-10">
           {Array.from({ length: 10 }).map((_, i) => {
             const conSed = i < evaluacion.aniosFalta;
@@ -362,7 +415,7 @@ function Resultado({
           })}
         </div>
         <p className="mt-2 text-sm font-semibold text-gray-800">
-          {10 - evaluacion.aniosFalta} años buenos · {evaluacion.aniosFalta} con sed
+          {10 - evaluacion.aniosFalta} años buenos · {evaluacion.aniosFalta} con riego necesario
           {evaluacion.semanasFalta > 0 ? ` · en un año típico faltó agua ${evaluacion.semanasFalta} de ${cultivo.semanas_del_ciclo} semanas` : ''}
         </p>
       </div>
