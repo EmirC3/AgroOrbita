@@ -26,7 +26,7 @@ function consejoDelLugar(m: MetricasMunicipio): string {
         mejor.dias_desde_inicio_lluvias > 0
           ? `${mejor.dias_desde_inicio_lluvias / 7} semanas después`
           : `${-mejor.dias_desde_inicio_lluvias / 7} semanas antes`;
-      return `Las lluvias suelen empezar el ${inicio}. Si siembras maíz ${cuando} de las primeras lluvias, solo tendrás que regar en la floración ${mejor.anios_con_falta_agua_de_cada_10} de cada 10 años (en vez de ${tipica.anios_con_falta_agua_de_cada_10}).`;
+      return `Las lluvias suelen empezar el ${inicio}. Si siembras maíz ${cuando} de las primeras lluvias, en un año normal solo tendrás que regar ${mejor.semanas_con_falta_agua_tipico} semanas (en vez de ${tipica.semanas_con_falta_agua_tipico}).`;
     }
     return `Las lluvias suelen empezar el ${inicio}. Para el maíz, sembrar con las primeras lluvias es lo que mejor ha funcionado aquí.`;
   }
@@ -194,7 +194,7 @@ async function DashboardContent({ searchParams }: DashboardPageProps) {
                   <span className="min-w-0 flex-1">
                     <span className="block truncate font-semibold text-gray-900">{cultivo.nombre}</span>
                     <span className="block text-xs text-gray-600">
-                      Falta agua {evaluacion.aniosFalta} de cada 10 años
+                      {evaluacion.semanasFalta > 0 ? `Riego ${evaluacion.semanasFalta} de ${cultivo.semanas_del_ciclo} semanas` : 'La lluvia alcanza'}
                       {evaluacion.diasCalor > 0 ? ` · ${evaluacion.diasCalor} días de calor dañino` : ''}
                     </span>
                   </span>
@@ -215,8 +215,7 @@ async function DashboardContent({ searchParams }: DashboardPageProps) {
             <p className="text-xs font-bold uppercase tracking-wide text-[#1B5E20]">Rotación recomendada</p>
             <p className="mt-1 text-lg font-bold text-gray-900">{rotacion.nombre}</p>
             <p className="mt-1 text-sm text-gray-700">
-              {rotacion.cultivos.map((c) => apariencia(c).emoji).join(' ')} · Falta agua{' '}
-              {rotacion.anios_con_falta_agua_de_cada_10} de cada 10 años
+              {rotacion.cultivos.map((c) => apariencia(c).emoji).join(' ')}
               {rotacion.suelo.nitrogeno ? ' · aporta nitrógeno' : ''}
               {rotacion.suelo.cubre_suelo ? ' · cubre el suelo' : ''}
               {rotacion.suelo.corta_plagas ? ' · corta plagas' : ''}
