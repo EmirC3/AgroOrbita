@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/ui/Navbar';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
@@ -11,12 +12,27 @@ type CatalogoCP = Record<string, { municipio: string; zona: string }>;
 const catalogCP: CatalogoCP = cpData;
 
 export default function OnboardingPage() {
+  const router = useRouter();
   const [cp, setCp] = useState('');
   
   // Lógica de Validación Dinámica
   const infoUbicacion = catalogCP[cp];
   const isValidCP = !!infoUbicacion; // true si el CP existe en el JSON
   const isError = cp.length === 5 && !isValidCP; // true si escribió 5 dígitos pero no existe
+
+  // Mantiene el último CP válido para que /dashboard no lo pierda al recargar.
+  useEffect(() => {
+    if (!isValidCP) return;
+    document.cookie = `rotamaya_cp=${encodeURIComponent(cp)}; path=/; max-age=31536000; SameSite=Lax`;
+  }, [cp, isValidCP]);
+
+  const irAlDashboard = () => {
+    if (!isValidCP) return;
+
+    // Guardamos el CP para que /dashboard funcione incluso si se recarga la página.
+    document.cookie = `rotamaya_cp=${encodeURIComponent(cp)}; path=/; max-age=31536000; SameSite=Lax`;
+    router.push(`/dashboard?cp=${encodeURIComponent(cp)}`);
+  };
 
   return (
     <main className="min-h-screen flex flex-col md:flex-row bg-[#FAF9F6] font-sans">
@@ -62,12 +78,25 @@ export default function OnboardingPage() {
               
               {/* Mensaje de Error (Se muestra si pone 12345, por ejemplo) */}
               {isError && (
-                <p className="text-red-500 text-[13.5px] mt-2 font-medium flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                  </svg>
-                  Código postal no válido o fuera de cobertura.
-                </p>
+                <div className="mt-2">
+                  <p className="flex items-center gap-1 text-sm font-medium text-red-600">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    Código postal no válido o fuera de cobertura.
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                    Por ahora tenemos datos de: 97880, 97930, 97000, 97740, 97700, 97860,
+                    97800 y 97390.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setCp('97880')}
+                    className="mt-1 text-sm font-semibold text-[#2E7D32] underline underline-offset-2 hover:text-[#1B5E20]"
+                  >
+                    Probar con 97880 (Oxkutzcab)
+                  </button>
+                </div>
               )}
 
               {/* Etiqueta de confirmación DINÁMICA */}
@@ -84,11 +113,12 @@ export default function OnboardingPage() {
               </div>
             </div>
 
-            {/* Este botón ahora redirige directamente a /dashboard */}
+            {/* Este botón guarda el CP y redirige a /dashboard */}
             <Button 
+              type="button"
               fullWidth 
               disabled={!isValidCP}
-              href={`/dashboard?cp=${encodeURIComponent(cp)}`}
+              onClick={irAlDashboard}
             >
               Ir al Dashboard &rarr;
             </Button>
