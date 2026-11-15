@@ -7,6 +7,7 @@ import { COOKIE_CP, COOKIE_MUNICIPIO, COOKIE_NOMBRE, lugarDesdeCP, nombreDesdeCo
 import { evaluar, fechaDesdeDia, rankingCultivos, type MetricasMunicipio } from '@/lib/metricas-tipos';
 import { apariencia } from '@/lib/cultivos-juego';
 import { PanelMascota } from './components/PanelMascota';
+import { ClimaReciente } from './components/ClimaReciente';
 import { GraficaHumedad, MetricaCard } from './components/Metricas';
 
 interface DashboardPageProps {
@@ -100,13 +101,17 @@ async function DashboardContent({ searchParams }: DashboardPageProps) {
 
         <PanelMascota nombre={nombre || 'agricultor'} municipio={m.nombre} consejo={consejoDelLugar(m)} />
 
+        <Suspense fallback={<div className="mt-6 h-40 animate-pulse rounded-3xl bg-sky-50" />}>
+          <ClimaReciente lat={m.punto_cuadricula_nasa.lat} lon={m.punto_cuadricula_nasa.lon} municipio={m.nombre} />
+        </Suspense>
+
         <section className="mt-8" aria-labelledby="clima">
           <div className="flex flex-wrap items-end justify-between gap-2">
             <div>
               <h2 id="clima" className="text-xl font-bold text-gray-900">
                 El clima de {m.nombre}
               </h2>
-              <p className="text-sm text-gray-600">Promedio de 1985 a 2025 · temporada de mayo a octubre</p>
+              <p className="text-sm text-gray-600">Historia de 1985 a 2025 · temporada de lluvias (mayo a octubre)</p>
             </div>
             <Link href="/?editar=1" className="text-sm font-semibold text-[#2E7D32] hover:text-[#1B5E20]">
               Cambiar lugar
