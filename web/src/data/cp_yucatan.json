@@ -6,5 +6,6 @@
   "97700": { "municipio": "Tizimín", "zona": "Zona Oriente", "lat": 21.14, "lon": -88.15 },
   "97860": { "municipio": "Tekax", "zona": "Zona Sur", "lat": 20.2, "lon": -89.29 },
   "97800": { "municipio": "Ticul", "zona": "Zona Sur", "lat": 20.4, "lon": -89.54 },
-  "97390": { "municipio": "Umán", "zona": "Zona Poniente", "lat": 20.88, "lon": -89.75 }
+  "97390": { "municipio": "Umán", "zona": "Zona Poniente", "lat": 20.88, "lon": -89.75 },
+  "97780": { "municipio": "Valladolid", "zona": "Zona Oriente", "lat": 20.69, "lon": -88.2 }
 }
