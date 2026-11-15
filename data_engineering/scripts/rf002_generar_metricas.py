@@ -25,7 +25,7 @@ from rd001_inicio_lluvias import inicio_lluvias
 from rd002_canicula import canicula, canicula_pct, dias_calor
 from rf002_temporada import deficit_agua, humedad_semanal, lluvia_temporada
 from tendencia import tendencia
-from cruce_cultivos import leer_cultivos, resumen_cultivo
+from cruce_cultivos import leer_cultivos, opciones_siembra, resumen_cultivo
 
 DATOS = Path(__file__).resolve().parents[1]
 ANIO_INICIO, ANIO_FIN_NORMAL = 1985, 2025   # el "normal" solo usa años completos
@@ -183,7 +183,12 @@ def generar(m):
     dia_clima = hacer_dia_clima(base, extra, AJUSTE_TMAX_C.get(m["municipio"]))
     siembras = [(a["anio"], date.fromisoformat(a["inicio_lluvias"]) if a["inicio_lluvias"] else None)
                 for a in normales]
-    cultivos = {c["cultivo_id"]: resumen_cultivo(c, siembras, dia_clima) for c in leer_cultivos()}
+    cultivos = {}
+    for c in leer_cultivos():
+        r = resumen_cultivo(c, siembras, dia_clima)
+        if r:  # opciones de fecha: 2 semanas antes, típica, 2 y 4 semanas después
+            r["si_siembras"] = opciones_siembra(c, siembras, dia_clima)
+        cultivos[c["cultivo_id"]] = r
     for a in anios:
         a["diferencia_vs_promedio"] = {
             c: (a[c] - prom[c]) if a[c] is not None and prom[c] is not None else None

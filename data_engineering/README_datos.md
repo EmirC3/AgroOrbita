@@ -36,9 +36,11 @@ Funciones reutilizables en `scripts/` (`rd001_inicio_lluvias.py`, `rd002_canicul
   `docs/investigacion/cultivos.csv` se "siembra" el día que empiezan las lluvias de cada año
   (el henequén, de enero a diciembre). El agua que pide = Kc × ETo, con las etapas FAO-56
   (15 % inicial, 30 % desarrollo, 30 % media, 25 % final). La etapa delicada es la media.
-  Se reporta en cuántos años de cada 10 le faltó agua en esa etapa, las semanas típicas con
+  Se reporta en cuántos años de cada 10 le faltó agua en esa etapa y en la etapa final, las semanas típicas con
   falta de agua y los días típicos arriba de su temperatura de daño. Ojo: en Mérida la
   temperatura está ajustada con la estación y en los demás no, así que el calor de los otros
   municipios probablemente sale bajo.
+  `si_siembras` repite el cálculo sembrando 2 semanas antes, en la fecha típica, y 2 y 4 semanas
+  después del inicio de lluvias, para que el agricultor mueva la fecha en la página.
 - **`EVPTRNS` no se usa:** es la evapotranspiración real del modelo de NASA, en unidades de energía.
   AquaCrop necesita la evapotranspiración de referencia (ETo), que calculamos con FAO-56 (RF-003).

@@ -9,6 +9,7 @@ Por cultivo y año:
 3. La etapa delicada (floración) es la etapa media, cuando la planta pide más agua.
 4. Se mide:
    - si en la etapa delicada llovió menos de lo que pidió la planta (le faltó agua),
+   - si le faltó agua en la etapa final (llenado y maduración; importa al sembrar tarde),
    - cuántas semanas del ciclo llovió menos de lo que pidió,
    - cuántos días de la etapa delicada pasaron la temperatura de daño del cultivo.
 """
@@ -60,6 +61,7 @@ def un_ciclo(siembra, cultivo, dia_clima):
     semanas = range(0, ciclo - 6, 7)
     return {
         "falta_agua_etapa_delicada": sum(llueve[ini:fin]) < sum(pide[ini:fin]),
+        "falta_agua_etapa_final": sum(llueve[fin:]) < sum(pide[fin:]),
         "semanas_con_falta": sum(sum(llueve[w:w + 7]) < sum(pide[w:w + 7]) for w in semanas),
         "semanas_del_ciclo": len(semanas),
         "dias_calor_danino": sum(calor[ini:fin]),
@@ -79,10 +81,12 @@ def resumen_cultivo(cultivo, siembras, dia_clima):
     if len(ciclos) < 10:
         return None
     falta = sum(c["falta_agua_etapa_delicada"] for c in ciclos)
+    falta_final = sum(c["falta_agua_etapa_final"] for c in ciclos)
     return {
         "nombre": cultivo["nombre_cultivo"],
         "anios_revisados": len(ciclos),
         "anios_con_falta_agua_de_cada_10": round(10 * falta / len(ciclos)),
+        "anios_con_falta_agua_final_de_cada_10": round(10 * falta_final / len(ciclos)),
         "semanas_con_falta_agua_tipico": round(statistics.median(c["semanas_con_falta"] for c in ciclos)),
         "semanas_del_ciclo": ciclos[0]["semanas_del_ciclo"],
         "dias_calor_danino_tipico": round(statistics.median(c["dias_calor_danino"] for c in ciclos)),
@@ -91,17 +95,42 @@ def resumen_cultivo(cultivo, siembras, dia_clima):
     }
 
 
+CORRIMIENTOS_DIAS = (-14, 0, 14, 28)   # 2 semanas antes, fecha típica, 2 y 4 semanas después
+
+
+def opciones_siembra(cultivo, siembras, dia_clima):
+    """El mismo resumen, pero moviendo la siembra respecto al inicio de lluvias de cada año.
+    Sirve para que el agricultor mueva la fecha y vea cómo cambia el riesgo.
+    El henequén (perenne) no se mueve: regresa None."""
+    if cultivo["tipo_ciclo"].lower().startswith("perenne"):
+        return None
+    opciones = []
+    for dias in CORRIMIENTOS_DIAS:
+        movidas = [(a, f + timedelta(days=dias) if f else None) for a, f in siembras]
+        r = resumen_cultivo(cultivo, movidas, dia_clima)
+        if r:
+            opciones.append({"dias_desde_inicio_lluvias": dias,
+                             "anios_con_falta_agua_de_cada_10": r["anios_con_falta_agua_de_cada_10"],
+                             "anios_con_falta_agua_final_de_cada_10":
+                                 r["anios_con_falta_agua_final_de_cada_10"],
+                             "semanas_con_falta_agua_tipico": r["semanas_con_falta_agua_tipico"],
+                             "dias_calor_danino_tipico": r["dias_calor_danino_tipico"]})
+    return opciones
+
+
 if __name__ == "__main__":
     # Kc: inicio, mitad y final del ciclo
     assert kc_del_dia(0, 100, 0.3, 1.15, 0.4) == 0.3
     assert kc_del_dia(60, 100, 0.3, 1.15, 0.4) == 1.15
     assert abs(kc_del_dia(99, 100, 0.3, 1.15, 0.4) - 0.43) < 0.01
 
-    # Ciclo de prueba: pide 1.15 x 4 = 4.6 mm en floración, llueven 3 -> le falta agua;
+    # Ciclo de prueba: pide 1.15 x 4 = 4.6 mm en floración, llueven 3.5 -> le falta agua;
     # máxima 36 > 35 en toda la floración (días 45 a 74) -> 30 días de calor dañino
     maiz = {"ciclo_dias": "100", "kc_inicial": "0.3", "kc_medio": "1.15", "kc_final": "0.4",
             "temp_dano_c": "35", "medir_con": "tmax"}
-    clima = lambda f: {"lluvia": 3, "eto": 4, "tmax": 36, "tmin": 22, "tmedia": 29}
+    clima = lambda f: {"lluvia": 3.5, "eto": 4, "tmax": 36, "tmin": 22, "tmedia": 29}
     r = un_ciclo(date(2001, 5, 20), maiz, clima)
     assert r["falta_agua_etapa_delicada"] is True and r["dias_calor_danino"] == 30, r
-    print("Las 4 pruebas del cruce de cultivos pasaron")
+    # En la etapa final el Kc baja de 1.15 a 0.4: pide ~3.1 mm en promedio, menos que 3.5 -> no falta
+    assert r["falta_agua_etapa_final"] is False, r
+    print("Las 5 pruebas del cruce de cultivos pasaron")

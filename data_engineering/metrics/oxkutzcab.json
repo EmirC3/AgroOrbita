@@ -97,101 +97,382 @@
    "nombre": "Maíz Grano",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 6,
+   "anios_con_falta_agua_final_de_cada_10": 1,
    "semanas_con_falta_agua_tipico": 7,
    "semanas_del_ciclo": 17,
    "dias_calor_danino_tipico": 0,
    "temp_dano_c": 35.0,
-   "medir_con": "tmax"
+   "medir_con": "tmax",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 7,
+     "anios_con_falta_agua_final_de_cada_10": 0,
+     "semanas_con_falta_agua_tipico": 8,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 6,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 4,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 6,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
   },
   "PEPI_02": {
    "nombre": "Pepino",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 5,
+   "anios_con_falta_agua_final_de_cada_10": 4,
    "semanas_con_falta_agua_tipico": 4,
    "semanas_del_ciclo": 10,
    "dias_calor_danino_tipico": 0,
    "temp_dano_c": 38.0,
-   "medir_con": "tmedia"
+   "medir_con": "tmedia",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 4,
+     "semanas_con_falta_agua_tipico": 6,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 4,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
   },
   "TOMA_03": {
    "nombre": "Tomate",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 7,
+   "anios_con_falta_agua_final_de_cada_10": 2,
    "semanas_con_falta_agua_tipico": 7,
    "semanas_del_ciclo": 16,
    "dias_calor_danino_tipico": 13,
    "temp_dano_c": 32.0,
-   "medir_con": "tmax"
+   "medir_con": "tmax",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 6,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 9,
+     "dias_calor_danino_tipico": 10
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 7,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 13
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 15
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 6,
+     "dias_calor_danino_tipico": 10
+    }
+   ]
   },
   "SOYA_04": {
    "nombre": "Soya",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 6,
+   "anios_con_falta_agua_final_de_cada_10": 0,
    "semanas_con_falta_agua_tipico": 6,
    "semanas_del_ciclo": 15,
    "dias_calor_danino_tipico": 0,
    "temp_dano_c": 35.0,
-   "medir_con": "tmax"
+   "medir_con": "tmax",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 8,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 6,
+     "anios_con_falta_agua_final_de_cada_10": 0,
+     "semanas_con_falta_agua_tipico": 6,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 4,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 6,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
   },
   "HENE_05": {
    "nombre": "Henequén",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 0,
+   "anios_con_falta_agua_final_de_cada_10": 1,
    "semanas_con_falta_agua_tipico": 25,
    "semanas_del_ciclo": 52,
    "dias_calor_danino_tipico": 0,
    "temp_dano_c": 40.0,
-   "medir_con": "tmedia"
+   "medir_con": "tmedia",
+   "si_siembras": null
   },
   "CALA_06": {
    "nombre": "Calabaza Chihua",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 5,
+   "anios_con_falta_agua_final_de_cada_10": 1,
    "semanas_con_falta_agua_tipico": 5,
    "semanas_del_ciclo": 14,
    "dias_calor_danino_tipico": 0,
    "temp_dano_c": 38.0,
-   "medir_con": "tmedia"
+   "medir_con": "tmedia",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 4,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 2,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 2,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
   },
   "FRIJ_07": {
    "nombre": "Frijol",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 5,
+   "anios_con_falta_agua_final_de_cada_10": 1,
    "semanas_con_falta_agua_tipico": 5,
    "semanas_del_ciclo": 12,
    "dias_calor_danino_tipico": 8,
    "temp_dano_c": 32.0,
-   "medir_con": "tmax"
+   "medir_con": "tmax",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 4,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 6,
+     "dias_calor_danino_tipico": 11
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 8
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 4,
+     "anios_con_falta_agua_final_de_cada_10": 0,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 11
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 4,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 11
+    }
+   ]
   },
   "XPEL_08": {
    "nombre": "Xpelón",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 5,
+   "anios_con_falta_agua_final_de_cada_10": 1,
    "semanas_con_falta_agua_tipico": 4,
    "semanas_del_ciclo": 11,
    "dias_calor_danino_tipico": 0,
    "temp_dano_c": 30.0,
-   "medir_con": "tmin"
+   "medir_con": "tmin",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 0,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
   },
   "CHIL_09": {
    "nombre": "Chile Habanero",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 3,
+   "anios_con_falta_agua_final_de_cada_10": 2,
    "semanas_con_falta_agua_tipico": 7,
    "semanas_del_ciclo": 18,
    "dias_calor_danino_tipico": 0,
    "temp_dano_c": 32.0,
-   "medir_con": "tmedia"
+   "medir_con": "tmedia",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 9,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 2,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 3,
+     "semanas_con_falta_agua_tipico": 7,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
   },
   "SAND_10": {
    "nombre": "Sandía",
    "anios_revisados": 41,
    "anios_con_falta_agua_de_cada_10": 5,
+   "anios_con_falta_agua_final_de_cada_10": 1,
    "semanas_con_falta_agua_tipico": 5,
    "semanas_del_ciclo": 12,
    "dias_calor_danino_tipico": 0,
    "temp_dano_c": 40.0,
-   "medir_con": "tmedia"
+   "medir_con": "tmedia",
+   "si_siembras": [
+    {
+     "dias_desde_inicio_lluvias": -14,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 3,
+     "semanas_con_falta_agua_tipico": 6,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 0,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 1,
+     "semanas_con_falta_agua_tipico": 5,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 14,
+     "anios_con_falta_agua_de_cada_10": 5,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    },
+    {
+     "dias_desde_inicio_lluvias": 28,
+     "anios_con_falta_agua_de_cada_10": 3,
+     "anios_con_falta_agua_final_de_cada_10": 2,
+     "semanas_con_falta_agua_tipico": 4,
+     "dias_calor_danino_tipico": 0
+    }
+   ]
   }
  },
  "anios": [
